@@ -74,3 +74,74 @@ body{
 	color: #213466f2;
 	font-family: sans-serif;
 }
+
+
+#nm{
+    letter-spacing: 3px;
+}
+
+.name{
+	color: #000000;
+	top: 30%;
+	left: 30%;
+	margin: 20px;
+}
+
+.box{
+	width: 35%;
+	padding: 5%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #ffffff; /*black*/ /*#005b74ba*/
+	text-align: center;
+}
+
+.box h1{
+	color: #000000;
+	font-weight: 400;
+}
+
+.box input[type = "text"], .box input[type = "password"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 6% auto;
+	text-align: center;
+	border: 1px solid #005b74;
+	padding: 14px 10px;
+	width: 65%;
+	outline: none;
+	color: #000000;
+	border-radius: 4px;
+}
+
+.box input[type = "submit"]{
+	border: 0;
+	background: none;
+	display: block;
+	margin: 6% auto;
+	text-align: center;
+	border: 2px solid #005b74; /*#00e4e8*/
+	padding: 5% 12%;
+	outline: none;
+	color: #005b74;
+	border-radius: 25%;
+	cursor: pointer;
+}
+
+.box input[type = "submit"]:hover{
+	background: #add8e6;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #00000091; /*#00e4e8*/
+  opacity: 1; /* Firefox */
+}
+
+.links a {
+	justify-self: center;
+	color: #213466f2;
+	font-family: sans-serif;
+}
