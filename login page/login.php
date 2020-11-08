@@ -1,5 +1,13 @@
 <?php
-
+	session_start();
+	if(array_key_exists("logout",$_GET))
+	{
+		unset($_SESSION);
+	}
+	else if(array_key_exists("login", $_SESSION))
+	{
+		header("location: loggedinpage.php");
+	}
 	$link=mysqli_connect("localhost","root","root","banking");
 	if(mysqli_connect_error())
 	{
@@ -7,7 +15,7 @@
 	}
 	
 	$string='';
-	if($_POST)
+	if(array_key_exists("submit", $_POST))
 	{
 		if(!$_POST['login'] or !$_POST['password'])
 		{
@@ -33,8 +41,10 @@
 						$row=mysqli_fetch_array($result);
 						if($row[0]==$_POST['password'])
 						{
-							$string='<div class="alert alert-success" role="alert">
-  						Welcome back!! You are successfully logged in.</div>';
+							// $string='<div class="alert alert-success" role="alert">
+  					// 	Welcome back!! You are successfully logged in.</div>';
+							$_SESSION['login']=$_POST['login'];
+							header("location: loggedinpage.php");
 
 						}
 						else
@@ -89,7 +99,7 @@
 		<h1>LOGIN</h1>
 		<input type="text" name="login" placeholder="LoginID">
 		<input type="password" name="password" placeholder="Password">
-		<input type="submit" name="" value="Sign In">
+		<input type="submit" name="submit" value="Sign In">
 		<div class="links">
 				<a href="">Forgot LoginID / Password?</a>
 			</div>
