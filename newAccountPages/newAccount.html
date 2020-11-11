@@ -16,19 +16,54 @@
 
     <!--External CSS-->
     <link rel="stylesheet" href="newAccountStyle.css">
-
-    <link rel="icon" type="image/png" href="navicon.svg">
     <title>Create Account</title>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <!--External JS-->
+    <script src="newAccount.js"></script>
 </head>
 
 <body>
-    <!-- Image and text for navbar-->
-    <nav class="navbar navbar-dark bg-primary p-3">
+  
+   
+    <nav class="navbar navbar-dark bg-primary p-3 ">
+        <div class="container-fluid">
         <a class="navbar-brand" href="#" id="nm">
             <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
             Apna Bank
         </a>
-    </nav>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Account</a>
+          </li>
+          <li class="nav-item dropdown bg-primary">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Send Money</a>
+              <a class="dropdown-item" href="#">Raise a Complaint</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</div>
+    </nav>   
+
 
     <!--For a alert to check filled info-->
     <div class="alert alert-primary" role="alert">
@@ -63,7 +98,7 @@
                     <label for="gender">Gender</label>
                     <select class="form-control" id="gender">
                         <option>Male</option>
-                        <option>Female</option>
+                        <option>Feale</option>
                         <option>Other</option>
                     </select>
                 </div>
