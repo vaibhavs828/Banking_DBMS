@@ -2,9 +2,9 @@
 	session_start();
 	if(array_key_exists("logout",$_GET))
 	{
-		unset($_SESSION);
+		session_destroy();
 	}
-	else if(array_key_exists("login", $_SESSION))
+	else if((array_key_exists("login", $_SESSION) and $_SESSION["login"]))
 	{
 		header("location: loggedinpage.php");
 	}
@@ -93,7 +93,7 @@
 	<!--<div class="name">
 			<h1>Apna Bank</h1>
 		</div>-->
-	<div><?php echo $string?></div>
+	<div class="container" ><?php echo $string?></div>
 
 	<form class="box" method="post">
 		<h1>LOGIN</h1>
