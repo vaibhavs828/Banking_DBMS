@@ -3,9 +3,10 @@
     padding: 0;
     box-sizing: border-box;
   }
- 
+
   body {
-    font-family: sans-serif;
+    font-family: 'Mulish', sans-serif !important;
+    letter-spacing: 5px !important;
     left: 0%;
   }
   
@@ -15,14 +16,13 @@
   nav {
     width: 80%;
     margin: 0 auto;
-    background: #fff;
     padding: 50px 0;
     box-shadow: 0px 5px 0px #dedede;
-    background: #f1c40f; 
-    color: rgba(0, 0, 0, 0.5);
+    background: #22253c;
+    color: #fff !important;
   }
   .yellow{
-    background: #f1c40f;
+    background: #22253c;
     position: relative;
   }
   .bt{
@@ -36,6 +36,11 @@
     right: 10%;
     top:35%;
     border-radius: 15px;
+  }
+
+  .btn{
+    white-space: nowrap;
+    margin: 70px 0px;
   }
   
   nav ul {
@@ -68,7 +73,8 @@
     z-index: 1;
   }
   nav.shift ul li a:hover {
-    color: #91640F;
+    color: #ffffff;
+    text-decoration: none;
   }
   nav.shift ul li a:after {
     display: block;
@@ -82,7 +88,8 @@
     height: 1px;
     content: '.';
     color: transparent;
-    background: #F1C40F;
+    background: #ffffff6c;
+    border-radius: 10px;
     visibility: none;
     opacity: 0;
     z-index: -1;
@@ -202,6 +209,9 @@
   z-index: 3;
 }
 
+#pig{
+  background-color: #00838fd9;
+}
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -220,7 +230,7 @@
  position: relative;
   justify-content: center;
   align-items: center;
-  background-color:#96AAD0;
+  background-color: rgb(34 37 60 / 1);
 }
 .main-div-2 {
   transition: .5s ease;
@@ -323,12 +333,12 @@
   
    justify-content: center;
    align-items: center;
-   background-color:orange;
+   background-color: rgb(34 37 60 / 1);
    
  }
  .main-div-3{
   position: relative;
-  background-color:#E829E0;
+  background-color:#097f8b;
    justify-content: center;
    align-items: center;
    
@@ -337,13 +347,13 @@
   position: relative;
    justify-content: center;
    align-items: center;
-   background-color:#96AAD0;
+   background-color:#22253c;
  }
  .main-div-5{
   position: relative;
    justify-content: center;
    text-align: center;
-   background-color: #D75D5D;
+   background-color:  #00838fd9;
    
  }
  .div-2{
@@ -353,7 +363,7 @@ margin-top: 100px;
 .div-1{
   margin-left: 150px; 
   margin-top: 100px;
-  background-color:#96AAD0;
+  background-color: rgb(34 37 60 / 1);
   margin-bottom: 10px;
   }
   .div-5{
@@ -365,7 +375,7 @@ margin-top: 100px;
 .div-4{
     margin-left: 150px; 
     margin-top: 100px;
-    background-color:#96AAD0;
+    background-color:#22253c;
     } 
     .div-3{
      
@@ -447,6 +457,10 @@ opacity: 0;
  .col{
    position: relative;
  }
+ .carousel-inner{
+   background-color:#097f8b;
+   color: #fff;
+ }
  #mycarousel{
    height: 100%;
    width: 100%;
@@ -458,7 +472,7 @@ opacity: 0;
   padding:70px 30px 70px 30px;
   position: relative;
   margin-bottom:0px;
-  background-color:darkmagenta;
+  background-color:#59697ebf;
   
 }
 .signup{
@@ -471,14 +485,19 @@ opacity: 0;
   height: 3rem;
 }
 .footer{
-  background-color: #D1C4E9;
+  background-color: #59697ebf;
   padding-top: 25px;
   margin:0px;
-}.carousel-item {
+  color: white;
+}
+.carousel-item {
   height: 300px;
   text-align: center;
   justify-content: center;
   margin-top: 5cm;
+}
+.footer li a{
+  color: white;
 }
 
 .carousel-item img {
@@ -489,7 +508,8 @@ opacity: 0;
 }
 .head-img{
   height: 250px;
-  width: 300px;
+  width: 270px;
+
 }
 .heading h1{
   border-bottom: 1px solid whitesmoke;
@@ -498,5 +518,12 @@ opacity: 0;
 }
 .heading h2{
   color: azure;
-  font-style: oblique;
+  margin-top: 20px;
+}
+
+#current{
+  padding: 50px 0px 40px 0px ;
+}
+#savings{
+
 }
