@@ -2,14 +2,21 @@
 <html>
 
 <head>
-    <title></title>
+    <title>About Us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
     <style>
 
+        body{
+            font-family: 'Mulish', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         #nm {
             letter-spacing: 3px;
         }
@@ -26,24 +33,89 @@
 
 background-color: whitesmoke;
         }
+        #nm{
+	padding-left: 0px;
+    letter-spacing: 3px;
+}
+.nav-link{
+	padding-top: 10px;
+	letter-spacing: 3px;
+}
+.dropdown-menu{
+	background-color: #007bff;
+	border: none !important;
+}
+.dropdown-item{
+	color: #70abff !important;
+	letter-spacing: 2px;
+}
+.dropdown>.dropdown-menu>a:hover {
+ 	color: #cce5ff !important;
+	background-color: transparent;
+}
+.h1 , h1{
+    margin-top: 40px;
+}
+.pb-5, .py-5{
+    margin-top: -60px;
+    padding-bottom: 0rem!important;
+}
+
     </style>
 
 </head>
 
 <body>
     <header>
-        <!-- Image and text for navbar-->
-        <nav class="navbar navbar-dark bg-primary p-3">
-            <a class="navbar-brand" href="#" id="nm">
-                <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                Apna Bank
-            </a>
+ 
+        <nav class="navbar navbar-dark bg-primary p-3 ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" id="nm">
+                    <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                    Apna Bank
+                </a>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Account</a>
+                        </li>
+                        <li class="nav-item dropdown bg-primary">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Send Money</a>
+                                <a class="dropdown-item" href="balance.php">current balance</a>
+                                <a class="dropdown-item" href="#">Raise a Complaint</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.php?logout=1">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
         </nav>
-        <!-- navbar ends -->
+    
+    <!--  end of navbar -->
 
         <!-- About us starts -->
         <section>
-            <div class="container fluid">
+            <div class="container fluid p-3">
                 <h1 class="text-center ">About Us</h1>
                 <hr class="w-25 mx-auto pt-5">
             </div>

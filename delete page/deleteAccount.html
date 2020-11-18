@@ -37,14 +37,6 @@
         </nav>
     </div>
 
-  <!--<div id="carouselExampleSlidesOnly" id="carousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img src="sad_emoji.png" class="d-block" id="sad" alt="...">
-          </div>
-          </div>
-          </div>-->  
-
 
 
     <!--copy-->
@@ -57,19 +49,18 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<form action="deleteAccount.php" method="POST">
 						<div class="input-group mb-3">
 							
                             <p class="apology">We are sorry to let you down</p>
-                            <!--<input type="text" name="" class="form-control input_user" value="" placeholder="username">-->
 							
 						</div>
 						<div class="input-group col-md-10 mb-2">
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="Confirm Password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="Confirm Password">
 						</div>
 						
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" id="button" name="button" class="btn login_btn">Delete</button>
+				 	<button id="button" type="submit" name="button" class="btn login_btn">Delete</button>
 				   </div>
 					</form>
 				</div>
