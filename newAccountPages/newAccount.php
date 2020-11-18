@@ -1,39 +1,81 @@
 <?php
+    session_start();
+    $string='';
+    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+    {
+        header("location: loggedinpage.php");
+    }
+    
+    
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link=mysqli_connect("localhost","root","root","banking");
+    $link=mysqli_connect("localhost","root","root","banking");
  
 // Check connection
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-}
-$f_name=$_POST['fname'];
-$l_name=$_POST['lname'];
-$full_name=$f_name." ".$l_name;     //concatenating into single string
-$email=$_POST['email'];
-//$name=$_GET['gender'];
-$phone_number=$_POST['phone'];
-$address=$_POST['address'];
-$city=$_POST['city'];
-$state=$_POST['state'];
-$zip=$_POST['zip'];
-$full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
-$password=$_POST['password'];
-$dob=$_POST['dob'];
- 
-// Attempt insert query execution
-$sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
-			values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
-if(mysqli_query($link, $sql)){
-    
-    $last_id = mysqli_insert_id($link);     // Obtain last inserted id
-    //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
-} else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);   //error statement
-}
- 
-// Close connection
-mysqli_close($link);
+    if(mysqli_connect_error())
+    {
+        die ('database connection error');
+    }
+    $f_name='';
+    $l_name='';
+    $full_name='';     //concatenating into single string
+    $email='';
+    //$name=$_GET['gender'];
+    $phone_number='';
+    $address='';
+    $city='';
+    $state='';
+    $zip='';
+    $full_address='';     //concatenating into single string
+    $password='';
+    $dob='';
+    $string='';
+    if(array_key_exists("submit",$_POST))
+    {
+        $f_name=$_POST['fname'];
+        $l_name=$_POST['lname'];
+        $full_name=$f_name." ".$l_name;     //concatenating into single string
+        $email=$_POST['email'];
+        //$name=$_GET['gender'];
+        $phone_number=$_POST['phone'];
+        $address=$_POST['address'];
+        $city=$_POST['city'];
+        $state=$_POST['state'];
+        $zip=$_POST['zip'];
+        $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
+        $password=$_POST['password'];
+        $dob=$_POST['dob'];
+        if(strlen($phone_number)==10)
+        {
+            // Attempt insert query execution
+            echo $email;
+            $query="SELECT count(email) from personal_info where '".$email."'=email";
+            $result=mysqli_query($link,$query);
+            $row=mysqli_fetch_array($result);
+            if($row[0]==0)
+            {
+                $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
+                            values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
+                if(mysqli_query($link, $sql)){
+                    
+                    $last_id = mysqli_insert_id($link);     // Obtain last inserted id
+                    //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
+                    header("location: login.php");
+                }
+            }
+            else
+            {
+                 $string='<div class="alert alert-danger" role="alert">
+                        This email id has already been used.Try another!!</div>';
+            }
+        }
+        else
+        {
+                $string='<div class="alert alert-danger" role="alert">
+                        wrong mobile number</div>';
+        }
+    }
+
 ?>
 
 
@@ -104,9 +146,6 @@ mysqli_close($link);
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -118,6 +157,9 @@ mysqli_close($link);
     <div class="alert alert-primary" role="alert">
         Go through the information you filled correctly before submitting.
     </div>
+    <div>
+        <?php echo $string ?>
+    </div>
 
 
     <div class="container">
@@ -127,7 +169,7 @@ mysqli_close($link);
     </div>
     <!--Bootstrap form-->
     <div class="container">
-        <form class="needs-validation" novalidate>
+        <form method="post" class="needs-validation" novalidate>
             <div class="form-row">
                 <div class="col-md-4 mb-3">
                     <label for="fname">First name</label>
@@ -265,7 +307,7 @@ mysqli_close($link);
     </div>
     </div>
     <center>
-        <button class="btn btn-outline-primary" type="submit">Submit form</button>
+        <button name="submit" class="btn btn-outline-primary" type="submit">Submit form</button>
     </center>
     </form>
     </div>
