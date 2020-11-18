@@ -1,14 +1,14 @@
 <?php
-	session_start();
-	if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+    session_start();
+    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
     
     }
-	else
-	{
-		header("location: login.php");
-	}
-	$link=mysqli_connect("localhost","root","root","banking");
+    else
+    {
+        header("location: login.php");
+    }
+    $link=mysqli_connect("localhost","root","root","banking");
     if(mysqli_connect_error())
     {
         die ('database connection error');
@@ -22,66 +22,44 @@
     $receiver='';
     if(array_key_exists("submit",$_POST))
     {
-		$to_account=$_POST['accountNumber'];
-		$amount=$_POST['amount'];
-		$from_account=$_SESSION['login'];
-    	if($to_account==$_SESSION['login']){
-    		$string='<div class="alert alert-danger" role="alert">
+        $to_account=$_POST['accountNumber'];
+        $amount=$_POST['amount'];
+        $from_account=$_SESSION['login'];
+        if($to_account==$_SESSION['login']){
+            $string='<div class="alert alert-danger" role="alert">
                         Enter where to in account number!!</div>';
-    	}
-    	else{
-	    	/*$query="SELECT count(*) from personal_info where ".$to_account."=account_number";
-			if($result=mysqli_query($link,$query))
-			{
-				$row=mysqli_fetch_array($result);
-				if($row[0]==0)
-				{
-                    $string='<div class="alert alert-danger" role="alert">
-                        Enter a valid account number!!</div>';
-				}*/
-				
-					 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
-					 if($result=mysqli_query($link,$query))
-						{
-							$row=mysqli_fetch_array($result);
-							if($row[0]<$amount)
-							{
-								$string='<div class="alert alert-danger" role="alert">
+        }
+        else{
+             $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+                     if($result=mysqli_query($link,$query))
+                        {
+                            $row=mysqli_fetch_array($result);
+                            if($row[0]<$amount)
+                            {
+                                $string='<div class="alert alert-danger" role="alert">
                         Not enough balance</div>';
-							}
-							else
-							{	
-								$query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
-								if(mysqli_query($link,$query))
-								{
-									 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+                            }
+                            else
+                            {   
+                                $query="INSERT INTO txn_other_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
+                                if(mysqli_query($link,$query))
+                                {
+                                     $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
                                      $result=mysqli_query($link,$query);
                                      $row=mysqli_fetch_array($result);
                                      $sender=$row[0];
-                                     /*$query="SELECT current_balance FROM balance WHERE ".$to_account."=account_number";
-                                     $result=mysqli_query($link,$query);
-                                     $row=mysqli_fetch_array($result);
-                                     $receiver=$row[0];*/
                                      $sender=$sender-$amount;
-                                     //$receiver=$receiver+$amount;
                                      $query="UPDATE balance set current_balance='$sender' WHERE ".$from_account."=account_number";
                                      mysqli_query($link,$query);
-                                     /*$query="UPDATE balance set current_balance='$receiver' WHERE ".$to_account."=account_number";
-                                     mysqli_query($link,$query);*/
                                      $string='<div class="alert alert-success" role="alert">
                         Transaction successfull</div>';
                                      
-								}	
+                                }   
 
-							}
-						}
-						
-
-
-				}
-			}
-		
-    
+                            }
+                        }
+        }
+    }
 
 
 
@@ -117,7 +95,8 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <!--
+<div class="wrapper">
   <div class="container">
     <div class="title">Transaction Page</div>
     <form class="needs-validation" novalidate>
@@ -137,10 +116,10 @@
         
       </div>
       <div class="section-3">
-      	<div class="items">
-      		<label class="label">Amount</label>
+        <div class="items">
+            <label class="label">Amount</label>
           <input type="text" class="input" placeholder="">
-      	</div>
+        </div>
       </div>
     </div>
    
@@ -164,7 +143,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 
 
 
@@ -188,7 +167,7 @@
                 });
             }, false);
         })();
-    </script>
+    </script>-->
 
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
@@ -241,7 +220,7 @@
     <div class="wrapper">
         <div class="container">
             <form name="form1" class="needs-validation" novalidate onsubmit="requiredacn()" method="post">
-                <div class="title">Transfer Money</div>
+                <div class="title">Transfer Money (other bank)</div>
                 <div class="input-form">
                     <div class="section-1">
                         <div class="items">
