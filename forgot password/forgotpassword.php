@@ -1,3 +1,16 @@
+<?php
+
+    $string='';
+    if(array_key_exists("submit",$_POST))
+    {
+        $string='<div class="alert alert-primary" role="alert">
+                        Our executive will contact you!!</div>';
+    }
+
+
+
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -58,9 +71,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Log Out</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -106,7 +116,8 @@
             </div>
         </div>        
     -->      
-    
+   <!--  alert if any -->
+  
     <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -116,7 +127,7 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
+					<form method="post">
 						<div class="input-group mb-2">
 							
                             <p class="apology">Enter your email to continue</p>
@@ -128,7 +139,7 @@
 						</div>
 						
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="button" id="button" name="button" class="btn login_btn">Confirm</button>
+				 	<button type="submit" id="button" name="submit" class="btn login_btn">Confirm</button>
 				   </div>
 					</form>
 				</div>
@@ -143,6 +154,9 @@
 			</div>
 		</div>
     </div>
+    <div>
+       <?php echo $string ?>
+   </div>
     
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
