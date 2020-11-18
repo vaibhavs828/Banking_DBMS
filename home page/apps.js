@@ -11,7 +11,7 @@ const carousel = document.querySelector(".anim-car");
 const image= document.querySelector(".image");
 const heading = document.querySelector(".heading");
 const signup = document.querySelector(".signup");
-const header = document.querySelector(".header");
+const header = document.querySelector(".jumbo");
 const te = new TimelineMax();
 const td = new TimelineMax();
 const tl = new TimelineMax();
@@ -19,9 +19,11 @@ const t2 = new TimelineMax();
 const t3 = new TimelineMax();
 const t4 = new TimelineMax();
 const t5 = new TimelineMax();
-te.fromTo(nav,1,{opacity:-1},{opacity:1}).fromTo(header,1.2,{width:"0%"},{width:"80%",ease: Power2.easeInOut},"-=1");
+te.fromTo(nav,1,{width:"0%"},{width:"100%",ease: Power2.easeInOut});
+td.fromTo(header,1,{width:"0%"},{width:"100%",ease: Power2.easeInOut},"-=1");
+
+t1.fromTo(heading,3,{opacity:-1},{opacity:1},"-=2");
 /*
-td.fromTo(carousel,0.9,{x:"-300%"},{x:"0%"});
 t4.fromTo(div1,0.5,{x:"300%"},{x:"0%"});
 tl.fromTo(div2,0.5,{x:"-300%"},{x:"0%"});
 t2.fromTo(div3,0.5,{x:"300%"},{x:"0%"});
