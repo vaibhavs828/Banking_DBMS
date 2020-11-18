@@ -115,7 +115,7 @@ server with default setting (user 'root' with no password) */
 
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="nm">
+            <a class="navbar-brand" href="login.php" id="nm">
                 <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Apna Bank
             </a>
