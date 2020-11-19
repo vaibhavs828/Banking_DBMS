@@ -92,6 +92,9 @@
   transition: none;
   margin-left: 0%;
 }
+.navbar-brand{
+  opacity: -4;
+}
   .bt{
     padding: 15px;
     text-decoration: none;
@@ -104,7 +107,7 @@
     top:35%;
     border-radius: 15px;
   }
-  
+ 
   
 /* nav css ends*/
 
@@ -276,10 +279,10 @@ margin-top: 100px;
       
       a div h2{
         margin-top: 30px;
-        border-top: 1px solid white;
-        border-bottom: 2px solid black;
+       
+        border-bottom: 2px solid whitesmoke;
         padding: 10px 10px 10px 10px;
-        border-radius: 5px;
+        
       }         
  /* grid css ends*/        
 /*grid animation and effects starts*/
@@ -545,9 +548,19 @@ ol{
     margin: 0 auto;
     background: #fff;
     padding: 50px 0;
-    box-shadow: 0px 5px 0px #dedede;
-    background:#22253c; 
+    box-shadow: 0px 5px 0px #dedede; 
+    background:#22253c;
     color: rgba(0, 0, 0, 0.5);
+  }
+  .line {
+    width: 30px;
+    height: 3px;
+    background:rgb(214, 198, 198);
+    margin: 5px;
+  }
+  a.navbar-brand{
+    color:rgb(214, 198, 198);
+    opacity: 1;
   }
   .yellow{
     background: #22253c;
@@ -674,7 +687,7 @@ height: 400px;
 .signup{
   position: absolute;
  bottom: 0%;
- right: 40%;
+ right: 60%;
 }
 header h3{
   color: #dedede;
