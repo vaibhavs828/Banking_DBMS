@@ -1,14 +1,14 @@
 <?php
-	session_start();
-	if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+    session_start();
+    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
     
     }
-	else
-	{
-		header("location: login.php");
-	}
-	$link=mysqli_connect("localhost","root","root","banking");
+    else
+    {
+        header("location: login.php");
+    }
+    $link=mysqli_connect("localhost","root","root","banking");
     if(mysqli_connect_error())
     {
         die ('database connection error');
@@ -22,40 +22,40 @@
     $receiver='';
     if(array_key_exists("submit",$_POST))
     {
-		$to_account=$_POST['accountNumber'];
-		$amount=$_POST['amount'];
-		$from_account=$_SESSION['login'];
-    	if($to_account==$_SESSION['login']){
-    		$string='<div class="alert alert-danger" role="alert">
+        $to_account=$_POST['accountNumber'];
+        $amount=$_POST['amount'];
+        $from_account=$_SESSION['login'];
+        if($to_account==$_SESSION['login']){
+            $string='<div class="alert alert-danger" role="alert">
                         Enter where to in account number!!</div>';
-    	}
-    	else{
-	    	$query="SELECT count(*) from personal_info where ".$to_account."=account_number";
-			if($result=mysqli_query($link,$query))
-			{
-				$row=mysqli_fetch_array($result);
-				if($row[0]==0)
-				{
+        }
+        else{
+            $query="SELECT count(*) from personal_info where ".$to_account."=account_number";
+            if($result=mysqli_query($link,$query))
+            {
+                $row=mysqli_fetch_array($result);
+                if($row[0]==0)
+                {
                     $string='<div class="alert alert-danger" role="alert">
                         Enter a valid account number!!</div>';
-				}
-				else
-				{
-					 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
-					 if($result=mysqli_query($link,$query))
-						{
-							$row=mysqli_fetch_array($result);
-							if($row[0]<$amount)
-							{
-								$string='<div class="alert alert-danger" role="alert">
+                }
+                else
+                {
+                     $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+                     if($result=mysqli_query($link,$query))
+                        {
+                            $row=mysqli_fetch_array($result);
+                            if($row[0]<$amount)
+                            {
+                                $string='<div class="alert alert-danger" role="alert">
                         Not enough balance</div>';
-							}
-							else
-							{	
-								$query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
-								if(mysqli_query($link,$query))
-								{
-									 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+                            }
+                            else
+                            {   
+                                $query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
+                                if(mysqli_query($link,$query))
+                                {
+                                     $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
                                      $result=mysqli_query($link,$query);
                                      $row=mysqli_fetch_array($result);
                                      $sender=$row[0];
@@ -72,16 +72,16 @@
                                      $string='<div class="alert alert-success" role="alert">
                         Transaction successfull</div>';
                                      
-								}	
+                                }   
 
-							}
-						}
-						
+                            }
+                        }
+                        
 
 
-				}
-			}
-		}
+                }
+            }
+        }
     }
 
 
@@ -139,10 +139,10 @@
         
       </div>
       <div class="section-3">
-      	<div class="items">
-      		<label class="label">Amount</label>
+        <div class="items">
+            <label class="label">Amount</label>
           <input type="text" class="input" placeholder="">
-      	</div>
+        </div>
       </div>
     </div>
    
@@ -166,7 +166,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 
 
 
@@ -194,7 +194,7 @@
 
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="nm">
+            <a class="navbar-brand" href="loggedinpage.php" id="nm">
                 <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Apna Bank
             </a>
@@ -205,7 +205,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="loggedinpage.php">Home
                         </a>
                     </li>
                     <li class="nav-item">
@@ -217,14 +217,14 @@
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Send Money</a>
+                            <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                            <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
                             <a class="dropdown-item" href="balance.php">current balance</a>
                             <a class="dropdown-item" href="#">Raise a Complaint</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="aboutus.php">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php?logout=1">Log Out</a>
