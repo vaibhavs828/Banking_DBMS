@@ -138,13 +138,14 @@ server with default setting (user 'root' with no password) */
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Send Money</a>
+                            <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                            <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                            <a class="dropdown-item" href="balance.php">current balance</a>
                             <a class="dropdown-item" href="#">Raise a Complaint</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html">About</a>
+                        <a class="nav-link" href="aboutus.php">About</a>
                     </li>
                 </ul>
             </div>
