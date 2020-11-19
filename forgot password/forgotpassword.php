@@ -1,5 +1,10 @@
 <?php
-
+    session_start();
+    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+    {
+        
+        header("location: loggedinpage.php");   
+    }
     $string='';
     if(array_key_exists("submit",$_POST))
     {
@@ -40,7 +45,7 @@
     <body>
         <nav class="navbar navbar-dark bg-primary p-3 ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#" id="nm">
+                <a class="navbar-brand" href="login.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Apna Bank
                 </a>
@@ -51,7 +56,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link" href="loggedinpage.php">Home
                             </a>
                         </li>
                         <li class="nav-item">
@@ -63,13 +68,14 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Send Money</a>
+                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                                <a class="dropdown-item" href="balance.php">current balance</a>
                                 <a class="dropdown-item" href="#">Raise a Complaint</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="aboutus.php">About</a>
                         </li>
                     </ul>
                 </div>
@@ -81,34 +87,34 @@
         <div class="top-content">
             <div class="inner-bg">
                 <div class="container">
-                	
+                    
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
                             <h1><strong>Forgot Password Forms</strong></h1>                            
                         </div>
                     </div>
-                        <div class="col-sm-6 col-sm-offset-3 text">                        	
-                        	<div class="form-box">
-	                        	<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3>Forgot Password</h3>
-	                            		<p>Enter email address to get password:</p>
-	                        		</div>
-	                        		<div class="form-top-right">
-	                        			<i class="fa fa-lock"></i>
-	                        		</div>
-	                            </div>
-	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="login-form">
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Username</label>
-				                        	<input type="text" name="form-username" placeholder="Username or email" class="form-username form-control" id="form-username">
-				                        </div>				                        
+                        <div class="col-sm-6 col-sm-offset-3 text">                         
+                            <div class="form-box">
+                                <div class="form-top">
+                                    <div class="form-top-left">
+                                        <h3>Forgot Password</h3>
+                                        <p>Enter email address to get password:</p>
+                                    </div>
+                                    <div class="form-top-right">
+                                        <i class="fa fa-lock"></i>
+                                    </div>
+                                </div>
+                                <div class="form-bottom">
+                                    <form role="form" action="" method="post" class="login-form">
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-username">Username</label>
+                                            <input type="text" name="form-username" placeholder="Username or email" class="form-username form-control" id="form-username">
+                                        </div>                                      
                                             <button type="submit" class="btn col-sm-5">Submit</button>
                                             <br><br>
                                             <a class="btn btn-primary" href="index.html">Sign In</a>
                                             <a class="btn btn-primary" href="register.html" style="float:right;">Sign Up</a>
-				                    </form>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -119,40 +125,40 @@
    <!--  alert if any -->
   
     <div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
-			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-						<img src="confused.png" class="brand_logo" alt="Logo">
-					</div>
-				</div>
-				<div class="d-flex justify-content-center form_container">
-					<form method="post">
-						<div class="input-group mb-2">
-							
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="confused.png" class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center form_container">
+                    <form method="post">
+                        <div class="input-group mb-2">
+                            
                             <p class="apology">Enter your email to continue</p>
                             <!--<input type="text" name="" class="form-control input_user" value="" placeholder="username">-->
-							
-						</div>
-						<div class="input-group col-md-12 mb-2" id="email">
-							<input type="email" name="email" class="form-control input_pass" value="" placeholder="abc@xyz.com">
-						</div>
-						
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" id="button" name="submit" class="btn login_btn">Confirm</button>
-				   </div>
-					</form>
-				</div>
-		
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
+                            
+                        </div>
+                        <div class="input-group col-md-12 mb-2" id="email">
+                            <input type="email" name="email" class="form-control input_pass" value="" placeholder="abc@xyz.com">
+                        </div>
+                        
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                    <button type="submit" id="button" name="submit" class="btn login_btn">Confirm</button>
+                   </div>
+                    </form>
+                </div>
+        
+                <div class="mt-4">
+                    <div class="d-flex justify-content-center links">
                         <center>
                         Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br><span><a href="#" id="createNew">Create a new Account</a></span>
                     </center>
-					</div>
-				</div>
-			</div>
-		</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div>
        <?php echo $string ?>

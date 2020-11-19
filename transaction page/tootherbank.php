@@ -171,7 +171,7 @@
 
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" id="nm">
+            <a class="navbar-brand" href="loggedinpage.php" id="nm">
                 <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Apna Bank
             </a>
@@ -182,11 +182,16 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="loggedinpage.php">Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Account</a>
+                    <li class="nav-item dropdown bg-primary">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
+                          My Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown bg-primary">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -194,14 +199,14 @@
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Send Money</a>
+                            <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                            <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
                             <a class="dropdown-item" href="balance.php">current balance</a>
                             <a class="dropdown-item" href="#">Raise a Complaint</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="aboutus.php">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.php?logout=1">Log Out</a>

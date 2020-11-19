@@ -17,6 +17,9 @@
 	}
 	
 	$string='';
+	$email='';
+	$account_number='';
+	$name='';
 	if(array_key_exists("submit", $_POST))
 	{
 		if(!$_POST['login'] or !$_POST['password'])
@@ -26,18 +29,21 @@
 		}
 		else
 		{
-			$query="select count(*) from personal_info where ".$_POST['login']."=account_number";
+			$email=$_POST['login'];
+			$query="SELECT account_number,full_name from personal_info where '".$email."'=email";
 			if($result=mysqli_query($link,$query))
 			{
 				$row=mysqli_fetch_array($result);
-				if($row[0]==0)
+				if(!isset($row))
 				{
 					$string='<div class="alert alert-danger" role="alert">
   						Incorrect LoginID or Password</div>';
 				}
 				else
 				{
-					$query="select password from personal_info where ".$_POST['login']."=account_number";
+					$account_number=$row[0];
+					$name=$row[1];
+					$query="SELECT password from personal_info where ".$account_number."=account_number";
 					if($result=mysqli_query($link,$query))
 					{
 						$row=mysqli_fetch_array($result);
@@ -45,7 +51,8 @@
 						{
 							// $string='<div class="alert alert-success" role="alert">
   					// 	Welcome back!! You are successfully logged in.</div>';
-							$_SESSION['login']=$_POST['login'];
+							$_SESSION['login']=$account_number;
+							$_SESSION['name']=$name;
 							header("location: loggedinpage.php");
 
 						}
@@ -103,13 +110,13 @@
 		<input type="password" name="password" placeholder="Password">
 		<input type="submit" name="submit" value="Sign In">
 		<div class="links">
-				<a href="">Forgot LoginID / Password?</a>
+				<a href="forgotpassword.php">Forgot LoginID / Password?</a>
 			</div>
 			<br>
 			<br>
 			<br/>
 			<div class="links">
-				<a href="">Create Account</a>
+				<a href="newAccount.php">Create Account</a>
 			</div>
 	</form>
 
