@@ -2,6 +2,7 @@
     session_start();
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
+        
         header("location: loggedinpage.php");   
     }
     $string='';
@@ -55,7 +56,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link" href="loggedinpage.php">Home
                             </a>
                         </li>
                         <li class="nav-item">
@@ -67,13 +68,14 @@
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Send Money</a>
+                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                                <a class="dropdown-item" href="balance.php">current balance</a>
                                 <a class="dropdown-item" href="#">Raise a Complaint</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="aboutus.html">About</a>
+                            <a class="nav-link" href="aboutus.php">About</a>
                         </li>
                     </ul>
                 </div>
