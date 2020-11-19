@@ -14,28 +14,47 @@
 </head>
 
 <body>
-<!--sode for navbar -->
+<!--code for navbar -->
   <section class="yellow">
-    <nav class="shift">
-      <ul>
+    <nav class="shift navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">Services</a>
+  <button class="navbar-toggler hamburgler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">   
+  <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="../about us/aboutus.html">About</a></li>
         <li><div class="dropdown show">
   <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Transactions
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">transaction within Bank</a>
+    <a class="dropdown-item" href="../transaction page/transaction.php">transaction within Bank</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#">transaction on diferent bank</a>
   </div>
 </div></li>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Login</a></li>
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Account
+  </a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item" href="#">Current Balance</a>
+    
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="../check balance/balance.php">Balance Summary</a>
+  </div>
+</li>
+        <li><a href="../login page/login.php">Login</a></li>
         <li><a href="#">Profile</a></li>
       </ul>
-     
+     </div>
     </nav>
   </section>
 
@@ -60,7 +79,7 @@
     </div>
     <div class="signup">
       <a role="button" class="btn bt btn-primary" data-toggle="tooltip" data-html="true"
-        title="Or Call us at  <br><strong>+852 12345678</strong>" data-placement="bottom" href="#here">signup</a>
+        title="<strong>Register for new account</strong>" data-placement="bottom" href="../newAccountpages/newAccount.php">signup</a>
        </div>
  <h3>New here? </h3>
   </header>
@@ -229,7 +248,7 @@
 <!-- div2 -->    
 <a href="#" class="block main-div-2">
       <div class="div-2">
-        <h2>current</h2>
+        <h2>Current</h2>
         <svg width="317" height="277" viewBox="0 0 317 277" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="savings" clip-path="url(#clip0)">
             <path id="Vector"
@@ -714,7 +733,7 @@
     <!-- div4 btw divs are anchor tags here so dont get confused -->
     <a href="#" class="block main-div-5">
       <div class="div-5">
-        <h2>contactus</h2>
+        <h2>Contact Us</h2>
         <svg width="600" height="400" viewBox="0 0 260 220" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="contactus" clip-path="url(#clip0)">
             <g id="Group" opacity="0.1">
@@ -1225,7 +1244,7 @@
     </a>
     <!-- ends -->
     <!-- div5 -->
-    <a href="#" class="main-div-4">
+    <a href="../transaction page/transaction.php" class="main-div-4">
       <div class="div-4">
         <h2>Money transfer</h2>
         <svg width="369" height="321" viewBox="0 0 369 321" fill="none" xmlns="http://www.w3.org/2000/svg">
