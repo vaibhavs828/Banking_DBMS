@@ -126,7 +126,7 @@ server with default setting (user 'root' with no password) */
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home
+                        <a class="nav-link" href="login.php">Home
                         </a>
                     </li>
                     <li class="nav-item">
@@ -144,7 +144,7 @@ server with default setting (user 'root' with no password) */
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="aboutus.html">About</a>
                     </li>
                 </ul>
             </div>
