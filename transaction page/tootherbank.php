@@ -185,8 +185,13 @@
                         <a class="nav-link" href="loggedinpage.php">Home
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Account</a>
+                    <li class="nav-item dropdown bg-primary">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
+                          My Account
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown bg-primary">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
