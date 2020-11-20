@@ -49,7 +49,7 @@
   <!--   Navigation bar starts here -->
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
-        <a class="navbar-brand" href="loggedinpage.php" id="nm">
+        <a class="navbar-brand" href="index.php" id="nm">
             <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
             Apna Bank
         </a>
@@ -59,7 +59,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="loggedinpage.php">Home
+            <a class="nav-link" href="index.php">Home
             </a>
           </li>
           <li class="nav-item dropdown bg-primary">

@@ -3,12 +3,12 @@
 	if(array_key_exists("logout",$_GET))
 	{
 		session_destroy();
-		header("location: login.php");
+		header("location: index.php");
 		
 	}
 	else if((array_key_exists("login", $_SESSION) and $_SESSION["login"]))
 	{
-		header("location: loggedinpage.php");
+		header("location: index.php");
 	}
 	$link=mysqli_connect("localhost","root","root","banking");
 	if(mysqli_connect_error())
@@ -53,7 +53,7 @@
   					// 	Welcome back!! You are successfully logged in.</div>';
 							$_SESSION['login']=$account_number;
 							$_SESSION['name']=$name;
-							header("location: loggedinpage.php");
+							header("location: index.php");
 
 						}
 						else
@@ -88,13 +88,13 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta charset="utf-8">
 	<title>Login Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="login_style.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
 </head>
 <body>
 	<!-- Image and text for navbar-->
     <nav class="navbar navbar-dark bg-primary p-3">
-        <a class="navbar-brand" href="#" id="nm">
+        <a class="navbar-brand" href="index.php" id="nm">
             <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
             Apna Bank
         </a>
