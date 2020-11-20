@@ -3,7 +3,7 @@
     $string='';
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-        header("location: loggedinpage.php");
+        header("location: index.php");
     }
     
     
@@ -115,7 +115,7 @@ server with default setting (user 'root' with no password) */
 
     <nav class="navbar navbar-dark bg-primary p-3 ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="login.php" id="nm">
+            <a class="navbar-brand" href="index.php" id="nm">
                 <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Apna Bank
             </a>
@@ -126,7 +126,7 @@ server with default setting (user 'root' with no password) */
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php">Home
+                        <a class="nav-link" href="index.php">Home
                         </a>
                     </li>
                     <li class="nav-item">

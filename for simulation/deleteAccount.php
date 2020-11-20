@@ -6,7 +6,7 @@
     }
     else
     {
-        header("location: login.php");
+        header("location: index.php");
     }
     $link=mysqli_connect("localhost","root","root","banking");
     if(mysqli_connect_error())
@@ -69,7 +69,7 @@
 
     <div class="navdiv">
         <nav class="navdel">
-            <a class="navbar-brand" href="loggedinpage.php">
+            <a class="navbar-brand" href="index.php">
                 <img src="navicon.svg" width="50" height="50" alt="" loading="lazy" id="navimg">
                 Apna Bank
             </a>
