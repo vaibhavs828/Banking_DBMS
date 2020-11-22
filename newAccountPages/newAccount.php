@@ -9,9 +9,7 @@
     
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-    $link=mysqli_connect("localhost","root","root","banking");
- 
-// Check connection
+    $link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
     {
         die ('database connection error');

@@ -8,11 +8,11 @@
   {
     header("location: login.php");
   }
-    $link=mysqli_connect("localhost","root","root","banking");
-    if(mysqli_connect_error())
-    {
-        die ('database connection error');
-    }
+    $link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
+  if(mysqli_connect_error())
+  {
+    die ('database connection error');
+  }
     $string='';
     if(array_key_exists("submit",$_POST))
     {

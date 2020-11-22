@@ -8,7 +8,7 @@
     {
         header("location: index.php");
     }
-    $link=mysqli_connect("localhost","root","root","banking");
+    $link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
     {
         die ('database connection error');
