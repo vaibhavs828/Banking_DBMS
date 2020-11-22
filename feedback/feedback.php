@@ -2,14 +2,24 @@
     session_start();
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-        
-        header("location: loggedinpage.php");   
+           
+    }
+    else{
+        header("location: index.php");
     }
     $string='';
     if(array_key_exists("submit",$_POST))
     {
-        $string='<div class="alert alert-primary" role="alert">
-                        Our executive will contact you!!</div>';
+    	if($_POST['feedback']=='')
+    	{
+    		$string='<div class="alert alert-danger" role="alert">
+                        Please enter your feedback!!</div>';
+    	}
+    	else
+    	{
+        	$string='<div class="alert alert-primary" role="alert">
+                        Thank you for your feedback!!</div>';
+        }
     }
 
 
@@ -33,8 +43,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 
     <!--External CSS-->
-    <link rel="stylesheet" href="style.css">
-    <title>Transaction</title>
+    <link rel="stylesheet" href="feedback_style.css">
+    <title>Feedback</title>
     <link rel="icon" type="image/png" href="navicon.svg">
 
 
@@ -44,44 +54,50 @@
 </head>
     <body>
         <nav class="navbar navbar-dark bg-primary p-3 ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="login.php" id="nm">
-                    <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                    Apna Bank
-                </a>
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="loggedinpage.php">Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">My Account</a>
-                        </li>
-                        <li class="nav-item dropdown bg-primary">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
-                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
-                                <a class="dropdown-item" href="balance.php">current balance</a>
-                                <a class="dropdown-item" href="#">Raise a Complaint</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus.php">About</a>
-                        </li>
-                    </ul>
-                </div>
+        <div class="container-fluid">
+        <a class="navbar-brand" href="index.php" id="nm">
+            <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+            Apna Bank
+        </a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home
+            </a>
+          </li>
+          <li class="nav-item dropdown bg-primary">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
+              My Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
             </div>
+          </li>
+          <li class="nav-item dropdown bg-primary">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
+              Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+              <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+              <a class="dropdown-item" href="balance.php">current balance</a>
+              <a class="dropdown-item" href="#">Raise a Complaint</a>
             </div>
-        </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="aboutus.php">About</a>
+          </li>
+           <li class="nav-item">
+                <a class="nav-link" href="login.php?logout=1">Log Out</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>
+    </nav>
     
      <!--
         <div class="top-content">
