@@ -29,6 +29,7 @@ server with default setting (user 'root' with no password) */
     $full_address='';     //concatenating into single string
     $password='';
     $dob='';
+    $currentDate=date('Y-m-d');
     $string='';
     if(array_key_exists("submit",$_POST))
     {
@@ -45,28 +46,40 @@ server with default setting (user 'root' with no password) */
         $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
         $password=$_POST['password'];
         $dob=$_POST['dob'];
+        $d1 = new DateTime($string);
+        $d2 = new DateTime($_POST['dob']);
+
+        $diff = $d2->diff($d1);
         if(strlen($phone_number)==10)
         {
             // Attempt insert query execution
-            echo $email;
-            $query="SELECT count(email) from personal_info where '".$email."'=email";
-            $result=mysqli_query($link,$query);
-            $row=mysqli_fetch_array($result);
-            if($row[0]==0)
+            if($diff->y<18)
             {
-                $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
-                			values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
-                if(mysqli_query($link, $sql)){
-                    
-                    $last_id = mysqli_insert_id($link);     // Obtain last inserted id
-                    //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
-                    header("location: login.php");
-                }
+                $string='<div class="alert alert-danger" role="alert">
+                            Age must be 18 or above</div>';
+
             }
             else
-            {
-                 $string='<div class="alert alert-danger" role="alert">
-                        This email id has already been used.Try another!!</div>';
+            {    
+                $query="SELECT count(email) from personal_info where '".$email."'=email";
+                $result=mysqli_query($link,$query);
+                $row=mysqli_fetch_array($result);
+                if($row[0]==0)
+                {
+                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
+                    			values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
+                    if(mysqli_query($link, $sql)){
+                        
+                        $last_id = mysqli_insert_id($link);     // Obtain last inserted id
+                        //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
+                        header("location: login.php");
+                    }
+                }
+                else
+                {
+                     $string='<div class="alert alert-danger" role="alert">
+                            This email id has already been used.Try another!!</div>';
+                }
             }
         }
         else

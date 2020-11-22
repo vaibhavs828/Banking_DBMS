@@ -82,6 +82,7 @@
 </li>
         <?php echo $string ?>
         <li><a href="#">Profile</a></li>
+
       </ul>
      </div>
     </nav>
