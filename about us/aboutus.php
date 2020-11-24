@@ -317,20 +317,20 @@ background-color: whitesmoke;
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
                     <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+                    <!--<h6 class="text-uppercase font-weight-bold">Useful links</h6>
                     <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                     <p>
                         <a class="dark-grey-text" href="#!">Your Account</a>
-                    </p>
+                    </p>-->
                     <!-- <p>
                         <a class="dark-grey-text" href="#!">Become an Affiliate</a>
                     </p> -->
                     <!-- <p>
                         <a class="dark-grey-text" href="#!">Shipping Rates</a>
                     </p> -->
-                    <p>
+                    <!--<p>
                         <a class="dark-grey-text" href="#!">Help</a>
-                    </p>
+                    </p>-->
 
                 </div>
                 <!-- Grid column -->
