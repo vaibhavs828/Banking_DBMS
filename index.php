@@ -1,4 +1,4 @@
-<?php 
+ta<?php 
     
     session_start();
     $string='<li><a href="login.php">Login</a></li>';
@@ -1273,7 +1273,7 @@
     </a>
     <!-- ends -->
     <!-- div5 -->
-    <a href="../transaction page/transaction.php" class="main-div-4">
+    <a href="transaction.php" class="main-div-4">
       <div class="div-4">
         <h2>Money transfer</h2>
         <svg width="369" height="321" viewBox="0 0 369 321" fill="none" xmlns="http://www.w3.org/2000/svg">
