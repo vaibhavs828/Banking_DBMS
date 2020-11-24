@@ -245,23 +245,23 @@ background-color: whitesmoke;
                     <div class="col-md-6 col-lg-7 text-center text-md-right">
 
                         <!-- Facebook -->
-                        <a class="fb-ic">
+                        <a class="fb-ic" href="https://www.facebook.com/">
                             <i class="fab fa-facebook-f white-text mr-4"> </i>
                         </a>
                         <!-- Twitter -->
-                        <a class="tw-ic">
+                        <a class="tw-ic" href="https://twitter.com/">
                             <i class="fab fa-twitter white-text mr-4"> </i>
                         </a>
                         <!-- Google +-->
-                        <a class="gplus-ic">
+                       <!-- <a class="gplus-ic">
                             <i class="fab fa-google-plus-g white-text mr-4"> </i>
-                        </a>
+                        </a>-->
                         <!--Linkedin -->
-                        <a class="li-ic">
+                        <a class="li-ic" href="https://in.linkedin.com/">
                             <i class="fab fa-linkedin-in white-text mr-4"> </i>
                         </a>
                         <!--Instagram-->
-                        <a class="ins-ic">
+                        <a class="ins-ic" href="https://www.instagram.com/">
                             <i class="fab fa-instagram white-text"> </i>
                         </a>
 
@@ -361,8 +361,8 @@ background-color: whitesmoke;
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center text-black-50 py-3 " style="background-color: grey;">© 2020 Copyright:
-           <!-- <a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
+        <div class="footer-copyright text-center text-black-50 py-3 " style="background-color: grey;">© 2020 Copyright: Apna Bank
+            <!--<a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
         </div>
         <!-- Copyright -->
 
