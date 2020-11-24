@@ -106,8 +106,8 @@
 
 	<form class="box" method="post">
 		<h1>LOGIN</h1>
-		<input type="text" name="login" placeholder="LoginID">
-		<input type="password" name="password" placeholder="Password">
+		<input type="text" name="login" placeholder="Enter EmailID">
+		<input type="password" name="password" placeholder="Enter Password">
 		<input type="submit" name="submit" value="Sign In">
 		<div class="links">
 				<a href="forgotpassword.php">Forgot LoginID / Password?</a>
