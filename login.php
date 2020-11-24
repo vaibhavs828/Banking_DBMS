@@ -106,7 +106,7 @@
 
 	<form class="box" method="post">
 		<h1>LOGIN</h1>
-		<input type="text" name="login" placeholder="Enter EmailID">
+		<input type="text" name="login" placeholder="Enter Email">
 		<input type="password" name="password" placeholder="Enter Password">
 		<input type="submit" name="submit" value="Sign In">
 		<div class="links">
