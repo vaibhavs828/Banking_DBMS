@@ -1,4 +1,4 @@
-ta<?php 
+<?php 
     
     session_start();
     $string='<li><a href="login.php">Login</a></li>';
