@@ -362,7 +362,7 @@ background-color: whitesmoke;
 
         <!-- Copyright -->
         <div class="footer-copyright text-center text-black-50 py-3 " style="background-color: grey;">© 2020 Copyright:
-            <a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>
+           <!-- <a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
         </div>
         <!-- Copyright -->
 
