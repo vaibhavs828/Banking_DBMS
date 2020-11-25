@@ -1,6 +1,6 @@
 <?php
-	echo "hey i am just here for testing";
-
+	
+	echo 'syntax error file'
 
 
 ?>
