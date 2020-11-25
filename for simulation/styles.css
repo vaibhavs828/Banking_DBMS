@@ -125,7 +125,7 @@ header h3{
   color: #dedede;
   position: absolute;
   top: 20%;
-  right: 13%;
+  right: 7%!important;
   border-bottom: 0.5px solid whitesmoke;
   font-style: italic;
 }
@@ -137,11 +137,16 @@ header h3{
 .head-img{
   height: 250px;
   width: 275px;
+  position: absolute;
+  top: -20px;
+  left: 10%;
 }
 .heading h1{
   border-bottom: 1px solid whitesmoke;
   color: azure;
   font-weight: 800;
+  position: absolute;
+  bottom: 50%;
 }
 .heading h2{
   color: azure;
@@ -442,11 +447,14 @@ ol{
 
 /*footer css*/
 
-.footer{
-  background-color: rgb(23, 23, 68);
+footer{
+  background-color: rgb(23, 23, 68)!important;
   padding-top: 25px;
   color: aliceblue;
   margin:0px;
+}
+.blue-page{
+  background-color:rgb(23, 23, 68)!important ;
 }
   .footer a{
     color: aliceblue;
@@ -471,21 +479,21 @@ ol{
       ;
   }
   .main-div-1{
-    width: 100%;
+    width: 450px!important;
     position: relative;
   }
   .main-div-2{
-    width: 100%;
+    width: 450px!important;
   }
   .main-div-3{
-    width: 100%;
+    width: 450px!important;
     background-color:rgb(20, 94, 20);
   }
   .main-div-4{
-    width: 100%;
+    width: 450px!important;
   }
   .main-div-5{
-    width: 100%;
+    width: 450px!important;
   }
   .div-1{
     object-fit: cover;
@@ -544,7 +552,7 @@ ol{
   
   
   nav {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
     background: #fff;
     padding: 50px 0;
@@ -565,6 +573,7 @@ ol{
   .yellow{
     background: #22253c;
     position: relative;
+    width: 450px!important;
   }
   .bt{
     padding: 15px;
@@ -644,6 +653,7 @@ ol{
 }  
 .row-content{
   background-color: #143064;
+  width: 465px!important;
 }
 
 .carousel-item {
@@ -673,6 +683,7 @@ background-color: rgb(23, 23, 68)
 ;
 position: relative;
 height: 400px;
+width: 450px!important;
 }
 .heading h1{
   border-bottom: 1px solid whitesmoke;
@@ -696,5 +707,8 @@ header h3{
   right: 50%;
   border-bottom: 0.5px solid whitesmoke;
   font-style: italic;
+}
+.footer{
+  width: 450px!important;
 }
 }
