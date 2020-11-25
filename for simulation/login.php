@@ -146,7 +146,7 @@
 		<input type="password" name="password" placeholder="Enter Password">
 		<input type="submit" name="submit" value="Sign In">
 		<div class="links">
-				<a href="forgotpassword.php">Forgot LoginID / Password?</a>
+				<a href="forgotpassword.php">Forgot Password?</a>
 			</div>
 			<br>
 			<br>

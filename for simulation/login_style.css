@@ -3,8 +3,9 @@ body{
 	padding: 0;
 	font-family: 'Mulish', sans-serif;
 	/*background: #d1e8e2;*/
-	background: url(blue.jpg) no-repeat;
+	background: url(blue.jpg) no-repeat fixed center;
 	background-size: cover;
+
 }
 
 
@@ -40,6 +41,10 @@ body{
     background-color: #fdfdff;
     border-radius: 0.5em;
     box-shadow: 5px 10px 10px #005b74;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -225px 0 0 -225px;
 }
 
 .box h1{
