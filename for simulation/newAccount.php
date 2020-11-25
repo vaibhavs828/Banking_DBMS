@@ -124,47 +124,47 @@ server with default setting (user 'root' with no password) */
 <body>
 
 
-    <nav class="navbar navbar-expand navbar-dark bg-primary p-3 ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php" id="nm">
-                <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                Apna Bank
-            </a>
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home &nbsp
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown bg-primary">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
-                            <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
-                            <a class="dropdown-item" href="balance.php">current balance</a>
-                            <a class="dropdown-item" href="#">Raise a Complaint</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">&nbspAbout &nbsp</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Account</a>
-                    </li>
-                   
-                    
-                </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+            <!--<div class="container-fluid">-->
+                <a class="navbar-brand" href="index.php" id="nm">
+                    <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                    Apna Bank
+                </a>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Home 
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown bg-primary">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                                <a class="dropdown-item" href="balance.php">current balance</a>
+                                <a class="dropdown-item" href="#">Raise a Complaint</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.php">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Account</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            <!--</div>-->
             </div>
-        </div>
-        </div>
-    </nav>
+        </nav>
 
 
     <!--For a alert to check filled info-->

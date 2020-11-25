@@ -84,8 +84,8 @@ background-color: whitesmoke;
 <body>
     <header>
  
-        <nav class="navbar navbar-dark bg-primary p-3 ">
-            <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+            <!--<div class="container-fluid">-->
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Apna Bank
@@ -97,16 +97,8 @@ background-color: whitesmoke;
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home
+                            <a class="nav-link" href="index.php">Home 
                             </a>
-                        </li>
-                        <li class="nav-item dropdown bg-primary">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
-                              My Account
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
-                            </div>
                         </li>
                         <li class="nav-item dropdown bg-primary">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -121,12 +113,16 @@ background-color: whitesmoke;
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="aboutus.php">About</a>
                         </li>
-                        <?php echo $string ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Account</a>
+                        </li>
+                        
+                        
                     </ul>
                 </div>
-            </div>
+            <!--</div>-->
             </div>
         </nav>
     

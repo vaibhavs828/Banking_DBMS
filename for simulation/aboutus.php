@@ -84,8 +84,8 @@ background-color: whitesmoke;
 <body>
     <header>
  
-        <nav class="navbar navbar-dark bg-primary p-3 ">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+            
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Apna Bank
@@ -126,7 +126,7 @@ background-color: whitesmoke;
                         <?php echo $string ?>
                     </ul>
                 </div>
-            </div>
+           
             </div>
         </nav>
     

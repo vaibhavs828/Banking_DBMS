@@ -43,8 +43,8 @@
     <!--External JS-->
 </head>
     <body>
-    <nav class="navbar navbar-expand navbar-dark bg-primary p-3 ">
-            <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+            <!--<div class="container-fluid">-->
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Apna Bank
@@ -56,7 +56,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home &nbsp
+                            <a class="nav-link" href="index.php">Home 
                             </a>
                         </li>
                         <li class="nav-item dropdown bg-primary">
@@ -72,7 +72,7 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="aboutus.php">&nbspAbout &nbsp</a>
+                            <a class="nav-link" href="aboutus.php">About</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">My Account</a>
@@ -81,7 +81,7 @@
                         
                     </ul>
                 </div>
-            </div>
+            <!--</div>-->
             </div>
         </nav>
     

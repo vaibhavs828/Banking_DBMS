@@ -169,8 +169,8 @@
         })();
     </script>-->
 
-    <nav class="navbar navbar-expand navbar-dark bg-primary p-3 ">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+        
             <a class="navbar-brand" href="index.php" id="nm">
                 <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                 Apna Bank
@@ -182,7 +182,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home&nbsp
+                        <a class="nav-link" href="index.php">Home
                         </a>
                     </li>
                     <li class="nav-item dropdown bg-primary">
@@ -196,7 +196,7 @@
                     <li class="nav-item dropdown bg-primary">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-expanded="false">
-                            &nbspServices
+                            Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
@@ -206,14 +206,14 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">&nbspAbout</a>
+                        <a class="nav-link" href="aboutus.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="login.php?logout=1">&nbspLog Out</a>
+                        <a class="nav-link" href="login.php?logout=1">Log Out</a>
                     </li>
                 </ul>
             </div>
-        </div>
+        
         </div>
     </nav>
 
