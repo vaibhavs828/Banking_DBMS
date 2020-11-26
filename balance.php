@@ -2,7 +2,13 @@
   session_start();
   if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
   {
-    
+    $now=time();
+    if($now>$_SESSION['expire'])
+    {
+      session_destroy();
+      // header("location: login.php");
+      
+    }
   }
   else
   {
