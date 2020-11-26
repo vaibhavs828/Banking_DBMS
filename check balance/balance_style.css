@@ -2,6 +2,11 @@
       body{
         font-family: 'Mulish', sans-serif;
         background-color: #f0f0f2;
+        background: url(blue.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
       }
       * {
         margin: 0;
@@ -42,8 +47,20 @@
       .login_box {
          width: 600px;
     text-align: center;
-      margin: 5em auto;
+      margin: 12em auto;
     background-color: #fdfdff;
       border-radius: 0.5em;
       box-shadow: 5px 10px 10px #005b74;
+      background-color:whitesmoke;
+      padding-bottom: 2em;
+      }
+      .login_box .color{
+        background-color: #007bff;
+      }
+      .login_box .color2 a{
+        background-color:whitesmoke;
+        text-decoration: none;
+        font-weight: 100;
+        color: black;
+        border-bottom: 2px solid black;
       }

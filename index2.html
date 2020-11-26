@@ -1,30 +1,4 @@
-<?php 
-    
-    session_start();
-    $string='<li><a href="login.php">Login</a></li>';
-    $string1='<div class="signup">
-      <a role="button" class="btn bt btn-primary" data-toggle="tooltip" data-html="true"
-        title="<strong>Register for new account</strong>" data-placement="bottom" href="newAccount.php">signup</a>
-       </div>
- <h3>New here? </h3>';
-    $for_animation='<script src="apps.js"></script>';
-    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
-    {
-        $string='<li><a href="login.php?logout=1">Logout</a></li>';
-        $string1='';
-        $for_animation='';
-        
-    }
-    
-    
 
-
-
-
-
-
-
- ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +59,7 @@
   </div>
 </li>
         <?php echo $string ?>
-        <li><a href="profile.php
-        ">Profile</a></li>
+        <li><a href="#">Profile</a></li>
 
       </ul>
      </div>
@@ -147,15 +120,14 @@
                
               </div>
             </div>
-            <ol class="carousel-indicators">
-              <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#mycarousel" data-slide-to="1"></li>
-              <li data-target="#mycarousel" data-slide-to="2"></li>
-              <li data-target="#mycarousel" data-slide-to="3"></li>
-              <li data-target="#mycarousel" data-slide-to="4"></li>
-            </ol>
+            
           </div>
-          
+          <a class="carousel-control-prev" href="#mycarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </a>
+          <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </a>
         </div>
       </div>
     </div>
@@ -956,11 +928,11 @@
 
 
 <!-- Footer Links -->
-<div id="blue-page">
+<div class="blue page">
 
     
 <div>
-    <div id="bp" class="container">
+    <div class="container">
 
         <!-- Grid row-->
         <div class="row py-4 d-flex align-items-center">
@@ -1091,7 +1063,7 @@
 <!-- Footer Links -->
 
 <!-- Copyright -->
-<div class="footer-copyright text-center text-black-50 py-3 " id="copyright">© 2020 Copyright: Apna Bank
+<div class="footer-copyright text-center text-black-50 py-3 ">© 2020 Copyright: Apna Bank
     <!--<a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
 </div>
 <!-- Copyright -->

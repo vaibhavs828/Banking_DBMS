@@ -275,20 +275,28 @@ margin-bottom: 10px;
       position: absolute;
       top: 0%;
       left:35%;
-      color: white;
+      color: black;
+     
     } 
     
     
     a div h2{
       margin-top: 30px;
      
-      border-bottom: 2px solid whitesmoke;
+      border-bottom: 2px solid black;
       padding: 10px 10px 10px 10px;
       
     }   
-    .blue_page{
-background-color:rgb(23, 23, 68) ;
-    }      
+    #blue-page{
+background-color:rgb(23, 23, 68)!important ;
+font-weight: 100;
+color: whitesmoke;
+    }
+    #copyright{
+      background-color:rgb(23, 23, 68)!important ;
+      font-weight: 100;
+      color: whitesmoke;
+          }         
 /* grid css ends*/        
 /*grid animation and effects starts*/
 .main-div-2 {
