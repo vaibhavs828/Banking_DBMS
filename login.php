@@ -96,6 +96,7 @@
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="login_style.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
+
 </head>
 <body>
 	<!-- Image and text for navbar-->
@@ -146,12 +147,13 @@
 	<div class="container" ><?php echo $string?></div>
 
 	<form class="box" method="post">
+	
 	<?php
 
 if ($_GET['msg'])
 {
   // echo '<div class="success_message"></p> <p></div>' ;
-   echo '<div><h4>Session Expired, please login again!<h4></div>';
+   echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
 }
 
 ?> 
