@@ -85,7 +85,8 @@
   </div>
 </li>
         <?php echo $string ?>
-        <li><a href="#">Profile</a></li>
+        <li><a href="profile.php
+        ">Profile</a></li>
 
       </ul>
      </div>
@@ -955,11 +956,11 @@
 
 
 <!-- Footer Links -->
-<div class="blue page">
+<div id="blue-page">
 
     
 <div>
-    <div class="container">
+    <div id="bp" class="container">
 
         <!-- Grid row-->
         <div class="row py-4 d-flex align-items-center">
@@ -1090,7 +1091,7 @@
 <!-- Footer Links -->
 
 <!-- Copyright -->
-<div class="footer-copyright text-center text-black-50 py-3 ">© 2020 Copyright: Apna Bank
+<div class="footer-copyright text-center text-black-50 py-3 " id="copyright">© 2020 Copyright: Apna Bank
     <!--<a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
 </div>
 <!-- Copyright -->
