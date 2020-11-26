@@ -14,13 +14,16 @@
     die ('database connection error');
   }
     $string='';
-    if(array_key_exists("submit",$_POST))
-    {
+    
+    
       $query="select current_balance from balance where ".$_SESSION['login']."=account_number";
       $result=mysqli_query($link,$query);
       $row=mysqli_fetch_array($result);
       $string="<h2>Current balance: ".$row[0]."</h2>";
-    }
+    $string1='';
+    $string1="<h2>Customer Name: ".$row[0]."</h2>"; 
+    $string2="<h2>Account Number: ".$row[0]."</h2>";  
+    
   
 
 
@@ -90,9 +93,12 @@
         </nav>
     <!-- container of our balance -->
     <div class="login_box">
+    <h2>Your Current Balance is as follows:</h2>
       <div><?php echo $string ?></div>
+      <div><?php echo $string1 ?></div>
+      <div><?php echo $string2 ?></div>
         <form  method="post">
-          <button class="btn btn-outline-primary" name="submit">Click to know Account balance</button>
+          
         </form>
     </div>
 
