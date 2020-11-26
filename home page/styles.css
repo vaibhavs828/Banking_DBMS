@@ -125,8 +125,7 @@ header h3{
   color: #dedede;
   position: absolute;
   top: 20%;
-  right: 7%!important;
-  border-bottom: 0.5px solid whitesmoke;
+  right: 7%;
   font-style: italic;
 }
 .signup{
@@ -137,16 +136,10 @@ header h3{
 .head-img{
   height: 250px;
   width: 275px;
-  position: absolute;
-  top: -20px;
-  left: 10%;
 }
 .heading h1{
-  border-bottom: 1px solid whitesmoke;
   color: azure;
   font-weight: 800;
-  position: absolute;
-  bottom: 50%;
 }
 .heading h2{
   color: azure;
@@ -447,14 +440,11 @@ ol{
 
 /*footer css*/
 
-footer{
-  background-color: rgb(23, 23, 68)!important;
+.footer{
+  background-color: rgb(23, 23, 68);
   padding-top: 25px;
   color: aliceblue;
   margin:0px;
-}
-.blue-page{
-  background-color:rgb(23, 23, 68)!important ;
 }
   .footer a{
     color: aliceblue;
@@ -479,21 +469,21 @@ footer{
       ;
   }
   .main-div-1{
-    width: 450px!important;
+    width: 450px;
     position: relative;
   }
   .main-div-2{
-    width: 450px!important;
+    width: 450px;
   }
   .main-div-3{
-    width: 450px!important;
+    width: 450px;
     background-color:rgb(20, 94, 20);
   }
   .main-div-4{
-    width: 450px!important;
+    width: 450px;
   }
   .main-div-5{
-    width: 450px!important;
+    width: 450px;
   }
   .div-1{
     object-fit: cover;
@@ -552,7 +542,7 @@ footer{
   
   
   nav {
-    width: 100%;
+    width: 60%;
     margin: 0 auto;
     background: #fff;
     padding: 50px 0;
@@ -573,17 +563,17 @@ footer{
   .yellow{
     background: #22253c;
     position: relative;
-    width: 450px!important;
+    width: 450px;
   }
   .bt{
-    padding: 15px;
-    text-decoration: none;
-    color: #aaa;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 20px; 
-    position: absolute;
-    right: 10%;
+    padding: 15px!important;
+    text-decoration: none!important;
+    color: #aaa!important;
+    font-weight: 800!important;
+    text-transform: uppercase!important;
+    font-size: 20px!important; 
+    position: absolute!important;
+    right: 10%!important;
     top:35%;
     border-radius: 15px;
   }
@@ -653,7 +643,6 @@ footer{
 }  
 .row-content{
   background-color: #143064;
-  width: 465px!important;
 }
 
 .carousel-item {
@@ -683,7 +672,6 @@ background-color: rgb(23, 23, 68)
 ;
 position: relative;
 height: 400px;
-width: 450px!important;
 }
 .heading h1{
   border-bottom: 1px solid whitesmoke;
@@ -707,8 +695,5 @@ header h3{
   right: 50%;
   border-bottom: 0.5px solid whitesmoke;
   font-style: italic;
-}
-.footer{
-  width: 450px!important;
 }
 }
