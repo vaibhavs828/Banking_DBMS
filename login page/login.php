@@ -71,91 +71,75 @@
 		}
 
 	}
-	
-
-
-
-
-
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<meta charset="utf-8">
-	<!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<meta charset="utf-8">
+		<!--Google Font-->
+		<link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 	<title>Login Page</title>
-	<link rel="stylesheet" type="text/css" href="login_style.css">
+	<link rel="stylesheet" href="login_style.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	
 	<link rel="icon" type="image/png" href="navicon.svg">
 </head>
+
 <body>
 	<!-- Image and text for navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
-            <!--<div class="container-fluid">-->
-                <a class="navbar-brand" href="index.php" id="nm">
-                    <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                    Apna Bank
-                </a>
-                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home 
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown bg-primary">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-expanded="false">
-                                Services
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
-                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
-                                <a class="dropdown-item" href="balance.php">current balance</a>
-                                <a class="dropdown-item" href="#">Raise a Complaint</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus.php">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">My Account</a>
-                        </li>
-                        
-                        
-                    </ul>
-                </div>
-            <!--</div>-->
-            </div>
-        </nav>
-	<!--<div class="name">
-			<h1>Apna Bank</h1>
-		</div>-->
-	<div class="container" ><?php echo $string?></div>
+	<!--<nav class="navbar navbar-dark bg-primary p-3">
+		<a class="navbar-brand" href="index.php" id="nm">
+			<img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+			Apna Bank
+		</a>
+	</nav>-->
 
-	<form class="box" method="post">
-		<h1>LOGIN</h1>
-		<input type="text" name="login" placeholder="Enter Email">
-		<input type="password" name="password" placeholder="Enter Password">
-		<input type="submit" name="submit" value="Sign In">
-		<div class="links">
-				<a href="forgotpassword.php">Forgot Password?</a>
+	<div><?php echo $string?></div>
+	<div class="container">
+		<header>LOGIN</header>
+		<form method="post">
+			<div class="input-field">
+				<input type="text" name="login" required>
+				<label>Enter Email</label>
 			</div>
-			<br>
-			<br>
-			<br/>
-			<div class="links">
-				<a href="newAccount.php">Create Account</a>
+			<div class="input-field">
+				<input class="pswrd" type="password" name="password" required>
+				<span class="show">SHOW</span>
+				<label>Enter Password</label>
 			</div>
-	</form>
+			<div class="button" name="submit">
+				<div class="inner">
+				</div>
+				<button type="submit" formaction="index.php">SIGN IN</button>
+			</div>
+		</form>
+
+		<div class="signup">
+			<a href="forgotpassword.php">Forgot Password?</a>
+			<br><br><br><br>
+			<a href="newAccount.php">Create an account</a>
+		</div>
+	</div>
+	<script>
+		var input = document.querySelector('.pswrd');
+		var show = document.querySelector('.show');
+		show.addEventListener('click', active);
+		function active() {
+			if (input.type === "password") {
+				input.type = "text";
+				show.style.color = "#1DA1F2";
+				show.textContent = "HIDE";
+			} else {
+				input.type = "password";
+				show.textContent = "SHOW";
+				show.style.color = "#111";
+			}
+		}
+	</script>
 
 </body>
+
 </html>
