@@ -53,6 +53,10 @@
   					// 	Welcome back!! You are successfully logged in.</div>';
 							$_SESSION['login']=$account_number;
 							$_SESSION['name']=$name;
+							$_SESSION['start']= time(); // Taking now logged in time.
+							// // Ending a session in 30 minutes from the starting time.
+							$_SESSION['expire'] = $_SESSION['start'] + (1 * 30);
+							// header("location: index.php");
 							header("location: index.php");
 
 						}
@@ -142,6 +146,15 @@
 	<div class="container" ><?php echo $string?></div>
 
 	<form class="box" method="post">
+	<?php
+
+if ($_GET['msg'])
+{
+  // echo '<div class="success_message"></p> <p></div>' ;
+   echo '<div><h4>Session Expired, please login again!<h4></div>';
+}
+
+?> 
 		<h1>LOGIN</h1>
 		<input type="text" name="login" placeholder="Enter Email">
 		<input type="password" name="password" placeholder="Enter Password">

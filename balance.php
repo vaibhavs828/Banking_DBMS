@@ -7,7 +7,7 @@
     {
       session_destroy();
       // header("location: login.php");
-      
+      header('Location: login.php?msg=' . urlencode(base64_encode("You have been successfully logged out!")));
     }
   }
   else
