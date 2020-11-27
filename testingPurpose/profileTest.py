@@ -47,13 +47,17 @@ password_field.click()
 password_field.send_keys(password)
 time.sleep(1)
 driver.find_element_by_xpath(submit_path).click()
+time.sleep(1)
 
-#Verification Part
-expected_text = "LOGOUT"
-actual_text = driver.find_element_by_id("logout").text
 
+#Profile Page
+driver.find_element_by_xpath('//*[@id="navbarSupportedContent"]/ul/li[6]/a').click()
+
+
+#Verification
+expected_text = "MY PROFILE"
+actual_text = driver.find_element_by_xpath('/html/body/div/h4').text
 assert expected_text == actual_text, f'Error. Expected text {expected_text}, but actual text {actual_text}'
-
 
 
 

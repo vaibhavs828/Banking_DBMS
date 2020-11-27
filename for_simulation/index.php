@@ -1,7 +1,7 @@
 <?php 
     
     session_start();
-    $string='<li><a href="login.php">Login</a></li>';
+    $string='<li><a id="login" href="login.php">Login</a></li>';
     $string1='<a href="newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
  $string2='<a href="#" data-toggle="modal" data-target="#exampleModal" class="block main-div-1">';
  $string3='<a href="#" class="block main-div-2" data-toggle="modal" data-target="#exampleModal">';
@@ -12,7 +12,7 @@
     $for_animation='<script src="apps.js"></script>';
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-        $string='<li><a href="login.php?logout=1">Logout</a></li>';
+        $string='<li><a id="logout" href="login.php?logout=1">Logout</a></li>';
         $string1='<a href="feedback.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Raise a Complaint</a>';
         $for_animation='';
         $string2='<a href="profile.php" class="block main-div-1">';
@@ -65,7 +65,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">   
   <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="#" class="active">Home</a></li>
         <li><a href="aboutus.php">About</a></li>
         <li><div class="dropdown show">
   <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

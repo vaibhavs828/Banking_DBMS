@@ -2,11 +2,17 @@
 	session_start();
 	if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-    
+        $now=time();
+        if($now>$_SESSION['expire'])
+        {
+          session_destroy();
+          // header("location: login.php");
+          header('Location: login.php?msg=' . urlencode(base64_encode("You have been successfully logged out!")));
+        }
     }
 	else
 	{
-		header("location: index.php");
+		header("Location:login.php?p=1");
 	}
 	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
@@ -233,7 +239,6 @@
             <!--</div>-->
             </div>
         </nav>
-
 <!--  end of navbar -->
 <!-- alerts -->
     <div>

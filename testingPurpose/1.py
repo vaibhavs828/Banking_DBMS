@@ -42,17 +42,11 @@ username_field.send_keys(username)
 time.sleep(1)
 
 password_field = driver.find_element_by_xpath(password_input)
-#password_field.clear()
+password_field.clear()
 password_field.click()
 password_field.send_keys(password)
 time.sleep(1)
 driver.find_element_by_xpath(submit_path).click()
-
-#Verification Part
-expected_text = "LOGOUT"
-actual_text = driver.find_element_by_id("logout").text
-
-assert expected_text == actual_text, f'Error. Expected text {expected_text}, but actual text {actual_text}'
 
 
 
