@@ -134,16 +134,16 @@
 						<img src="confused.png" class="brand_logo" alt="Logo">
 					</div>
 				</div>
-				<div class="d-flex justify-content-center form_container">
-					<form method="post">
+<!--				<div class="d-flex justify-content-center form_container">
+					<form method="post" name="form1" action="#">
 						<div class="input-group mb-2">
 							
                             <p class="apology">Enter your email to continue</p>
-                            <!--<input type="text" name="" class="form-control input_user" value="" placeholder="username">-->
+                            
 							
 						</div>
 						<div class="input-group col-md-12 mb-2" id="email">
-							<input type="email" name="email" class="form-control input_pass" value="" placeholder="abc@xyz.com">
+							<input type="text" name="text1" class="form-control input_pass" value="" placeholder="abc@xyz.com"  >
 						</div>
 						
 							<div class="d-flex justify-content-center mt-3 login_container">
@@ -151,19 +151,38 @@
 				   </div>
 					</form>
 				</div>
-		
+-->
+
+<div class="d-flex justify-content-center form_container">
+					
+<form name="form1" method="post">
+
+						<div class="input-group mb-2">
+							
+                            <p class="apology">Enter your email to continue</p>
+                            
+							
+						</div>
+<div class="input-group col-md-12 mb-2" id="email">
+							<input type="text" name="text1" class="form-control input_pass" value="" placeholder="abc@xyz.com"  >
+						</div>
+
+<div class="d-flex justify-content-center mt-3 login_container">
+    <button class="btn login_btn" type="submit" name="Validate" value="Validate" onclick="ValidateEmail(document.form1.text1)">submit</button></div> 
+</form>
+</div>
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
                         <center>
-                        Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br><span><a href="#" id="createNew">Create a new Account</a></span>
+                        Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br><span><a href="newAccount.php" id="createNew">Create a new Account</a></span>
                     </center>
 					</div>
 				</div>
 			</div>
 		</div>
     </div>
-    <div>
-       <?php echo $string ?>
+    <div >
+    <?php echo $string ?>   
    </div>
     
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->
@@ -173,5 +192,23 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
         crossorigin="anonymous"></script>
+        <script>
+          function ValidateEmail(inputText)
+{
+var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(inputText.value.match(mailformat))
+{
+    alert("our executive will contact you!");
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.text1.focus();
+return false;
+}
+}
+
+        </script>
     </body>
 </html>
