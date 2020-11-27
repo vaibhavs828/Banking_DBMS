@@ -57,6 +57,9 @@ nav.shift ul li a {
 nav.shift ul li a:hover {
   color: black;
 }
+nav.shift ul li a:focus {
+  color: black;
+}
 nav.shift ul li a:after {
   display: block;
   position: absolute;
@@ -75,6 +78,11 @@ nav.shift ul li a:after {
   z-index: -1;
 }
 nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+nav.shift-home ul li a:after{
   opacity: 1;
   visibility: visible;
   height: 100%;

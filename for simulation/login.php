@@ -8,6 +8,7 @@
 	}
 	else if((array_key_exists("login", $_SESSION) and $_SESSION["login"]))
 	{
+		
 		header("location: index.php");
 	}
 	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");

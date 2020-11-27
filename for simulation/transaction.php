@@ -6,7 +6,7 @@
     }
 	else
 	{
-		header("location: index.php");
+		header("Location:login.php?p=1");
 	}
 	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
