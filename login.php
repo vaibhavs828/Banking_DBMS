@@ -1,5 +1,40 @@
 <?php
 	session_start();
+	
+if (!isset($_SESSION['count'])) {
+	$_SESSION['count'] = 0;
+  } 
+  
+  if($_SESSION['count']<3)
+  {
+	  $var='<input type="submit" name="submit" value="Sign In">';
+	  
+  if($_SESSION['count'] >= 3)
+  {
+	  // echo 'Your session is locked for 30 minutes.';
+	  $var2='<div class="alert alert-danger" role="alert">
+	  Your session is locked for 30 seconds.</div>';
+	  $var='<input type="submit" name="submit" value="Sign In"  disabled>';
+	  
+	  
+  
+	  if(!$_SESSION['timeout']) 
+	  {
+		  $_SESSION['timeout'] = time();
+	  }
+	  $st = $_SESSION['timeout'] + 30; 
+	  // echo $st;//session time is 30 minutes
+	  // echo time();
+	 
+	  if(time() >= $st) {
+		  session_destroy("count");
+		  session_destroy("timeout");
+		  unset($_SESSION['count']);
+		  unset($_SESSION['timeout']);
+	  }
+  
+  }
+  
 	if(array_key_exists("logout",$_GET))
 	{
 		session_destroy();
@@ -63,7 +98,8 @@
 						else
 						{
 							$string='<div class="alert alert-danger" role="alert">
-  						Incorrect LoginID or Password</div>';
+						  Incorrect LoginID or Password</div>';
+						  $_SESSION['count']++;
 
 						}
 					}
@@ -144,7 +180,12 @@
 	<!--<div class="name">
 			<h1>Apna Bank</h1>
 		</div>-->
-	<div class="container" ><?php echo $string?></div>
+	
+	<div class="container" ><?php 
+	if(empty($var2))
+	{echo $string;}
+	else
+	{echo $var2;}?></div>
 
 	<form class="box" method="post">
 	
@@ -160,7 +201,8 @@ if ($_GET['msg'])
 		<h1>LOGIN</h1>
 		<input type="text" name="login" placeholder="Enter Email">
 		<input type="password" name="password" placeholder="Enter Password">
-		<input type="submit" name="submit" value="Sign In">
+		<!-- <input type="submit" name="submit" value="Sign In"> -->
+		<?php echo $var?>
 		<div class="links">
 				<a href="forgotpassword.php">Forgot Password?</a>
 			</div>
