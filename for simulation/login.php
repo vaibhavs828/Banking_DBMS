@@ -53,11 +53,10 @@
   					// 	Welcome back!! You are successfully logged in.</div>';
 							$_SESSION['login']=$account_number;
 							$_SESSION['name']=$name;
-
-
 							$_SESSION['start']= time(); // Taking now logged in time.
 							// // Ending a session in 30 minutes from the starting time.
-							$_SESSION['expire'] = $_SESSION['start'] + (1 * 30);
+							$_SESSION['expire'] = $_SESSION['start'] + (2 * 60);
+							// header("location: index.php");
 							header("location: index.php");
 
 						}
@@ -97,9 +96,11 @@
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="login_style.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
+
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+	<!-- Image and text for navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
             <!--<div class="container-fluid">-->
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -146,6 +147,16 @@
 	<div class="container" ><?php echo $string?></div>
 
 	<form class="box" method="post">
+	
+	<?php
+
+if ($_GET['msg'])
+{
+  // echo '<div class="success_message"></p> <p></div>' ;
+   echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
+}
+
+?> 
 		<h1>LOGIN</h1>
 		<input type="text" name="login" placeholder="Enter Email">
 		<input type="password" name="password" placeholder="Enter Password">
