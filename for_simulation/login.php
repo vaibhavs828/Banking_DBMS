@@ -28,6 +28,10 @@ if (!isset($_SESSION['count'])) {
 	  // echo time();
 	 
 	  if(time() >= $st) {
+		 $str='<div class="alert alert-danger" role="alert">
+					   Your session is unlocked, Try now!</div>';
+	   $var='<input type="submit" name="submit" value="Sign In">';
+		  
 		  session_destroy("count");
 		  session_destroy("timeout");
 		  unset($_SESSION['count']);
@@ -183,10 +187,17 @@ if (!isset($_SESSION['count'])) {
 		</div>-->
 	
 	<div class="container" ><?php 
+	if(empty($str))
+{
 	if(empty($var2))
 	{echo $string;}
 	else
-	{echo $var2;}?></div>
+	{echo $var2;}
+}
+else
+echo $str;
+	
+	?></div>
 
 	<form class="box" method="post">
 	
