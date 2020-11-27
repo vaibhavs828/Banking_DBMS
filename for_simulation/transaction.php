@@ -1,14 +1,20 @@
 <?php
-    session_start();
-    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+	session_start();
+	if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-    
+        $now=time();
+        if($now>$_SESSION['expire'])
+        {
+          session_destroy();
+          // header("location: login.php");
+          header('Location: login.php?msg=' . urlencode(base64_encode("You have been successfully logged out!")));
+        }
     }
-    else
-    {
-        header("location: index.php");
-    }
-    $link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
+	else
+	{
+		header("Location:login.php?p=1");
+	}
+	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
     {
         die ('database connection error');
@@ -22,43 +28,66 @@
     $receiver='';
     if(array_key_exists("submit",$_POST))
     {
-        $to_account=$_POST['accountNumber'];
-        $amount=$_POST['amount'];
-        $from_account=$_SESSION['login'];
-        if($to_account==$_SESSION['login']){
-            $string='<div class="alert alert-danger" role="alert">
+		$to_account=$_POST['accountNumber'];
+		$amount=$_POST['amount'];
+		$from_account=$_SESSION['login'];
+    	if($to_account==$_SESSION['login']){
+    		$string='<div class="alert alert-danger" role="alert">
                         Enter where to in account number!!</div>';
-        }
-        else{
-             $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
-                     if($result=mysqli_query($link,$query))
-                        {
-                            $row=mysqli_fetch_array($result);
-                            if($row[0]<$amount)
-                            {
-                                $string='<div class="alert alert-danger" role="alert">
+    	}
+    	else{
+	    	$query="SELECT count(*) from personal_info where ".$to_account."=account_number";
+			if($result=mysqli_query($link,$query))
+			{
+				$row=mysqli_fetch_array($result);
+				if($row[0]==0)
+				{
+                    $string='<div class="alert alert-danger" role="alert">
+                        Enter a valid account number!!</div>';
+				}
+				else
+				{
+					 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+					 if($result=mysqli_query($link,$query))
+						{
+							$row=mysqli_fetch_array($result);
+							if($row[0]<$amount)
+							{
+								$string='<div class="alert alert-danger" role="alert">
                         Not enough balance</div>';
-                            }
-                            else
-                            {   
-                                $query="INSERT INTO txn_other_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
-                                if(mysqli_query($link,$query))
-                                {
-                                     $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+							}
+							else
+							{	
+								$query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
+								if(mysqli_query($link,$query))
+								{
+									 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
                                      $result=mysqli_query($link,$query);
                                      $row=mysqli_fetch_array($result);
                                      $sender=$row[0];
+                                     $query="SELECT current_balance FROM balance WHERE ".$to_account."=account_number";
+                                     $result=mysqli_query($link,$query);
+                                     $row=mysqli_fetch_array($result);
+                                     $receiver=$row[0];
                                      $sender=$sender-$amount;
+                                     $receiver=$receiver+$amount;
                                      $query="UPDATE balance set current_balance='$sender' WHERE ".$from_account."=account_number";
+                                     mysqli_query($link,$query);
+                                     $query="UPDATE balance set current_balance='$receiver' WHERE ".$to_account."=account_number";
                                      mysqli_query($link,$query);
                                      $string='<div class="alert alert-success" role="alert">
                         Transaction successfull</div>';
                                      
-                                }   
+								}	
 
-                            }
-                        }
-        }
+							}
+						}
+						
+
+
+				}
+			}
+		}
     }
 
 
@@ -116,10 +145,10 @@
         
       </div>
       <div class="section-3">
-        <div class="items">
-            <label class="label">Amount</label>
+      	<div class="items">
+      		<label class="label">Amount</label>
           <input type="text" class="input" placeholder="">
-        </div>
+      	</div>
       </div>
     </div>
    
@@ -143,7 +172,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 
 
 
@@ -170,53 +199,46 @@
     </script>-->
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
-        
-            <a class="navbar-brand" href="index.php" id="nm">
-                <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                Apna Bank
-            </a>
-            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home
-                        </a>
-                    </li>
-                    <li class="nav-item dropdown bg-primary">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"  aria-expanded="false">
-                          My Account
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown bg-primary">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
-                            <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
-                            <a class="dropdown-item" href="balance.php">current balance</a>
-                            <a class="dropdown-item" href="#">Raise a Complaint</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php?logout=1">Log Out</a>
-                    </li>
-                </ul>
+            <!--<div class="container-fluid">-->
+                <a class="navbar-brand" href="index.php" id="nm">
+                    <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                    Apna Bank
+                </a>
+                <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Home 
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown bg-primary">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
+                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                                <a class="dropdown-item" href="balance.php">current balance</a>
+                                <a class="dropdown-item" href="#">Raise a Complaint</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="aboutus.php">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My Account</a>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+            <!--</div>-->
             </div>
-        
-        </div>
-    </nav>
-
+        </nav>
 <!--  end of navbar -->
 <!-- alerts -->
     <div>
@@ -225,7 +247,7 @@
     <div class="wrapper">
         <div class="container">
             <form name="form1" class="needs-validation" novalidate onsubmit="requiredacn()" method="post">
-                <div class="title">Transfer Money (other bank)</div>
+                <div class="title">Transfer Money</div>
                 <div class="input-form">
                     <div class="section-1">
                         <div class="items">
