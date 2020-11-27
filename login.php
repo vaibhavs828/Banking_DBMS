@@ -9,6 +9,7 @@ if (!isset($_SESSION['count'])) {
   {
 	  $var='<input type="submit" name="submit" value="Sign In">';
 	  
+  }
   if($_SESSION['count'] >= 3)
   {
 	  // echo 'Your session is locked for 30 minutes.';
