@@ -124,7 +124,7 @@ background-color: rgb(23, 23, 68)
 header h3{
 color: #dedede;
 position: absolute;
-top: 20%;
+top: 35%;
 right: 7%;
 font-style: italic;
 }
@@ -136,14 +136,23 @@ top:35%
 .head-img{
 height: 250px;
 width: 275px;
+transform:translateX(10%)
 }
 .heading h1{
-color: azure;
+position: absolute;
+transform: translateY(100%);
+  color: azure;
 font-weight: 800;
 }
 .heading h2{
 color: azure;
 font-style: oblique;
+}
+.blue{
+  background-color: rgb(8, 64, 219);
+}
+.modal-title{
+  color: aliceblue;
 }
 /* header css ends*/
 /* grid css  starts*/
@@ -283,10 +292,13 @@ margin-bottom: 10px;
     a div h2{
       margin-top: 30px;
      
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid whitesmoke;
       padding: 10px 10px 10px 10px;
       
     }   
+    .div-5 h2{
+      border-bottom: 2px solid whitesmoke;
+    }
     #blue-page{
 background-color:rgb(23, 23, 68)!important ;
 font-weight: 100;
@@ -541,12 +553,28 @@ h5{
   margin-left: 5px;
 
 }
+.div-4 h2{
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  color: whitesmoke;
+  z-index: 2;
+}
+
 .div-5{
   object-fit: cover;
   width: 90%;
   margin-left: 5px;
 
 }
+.div-5 h2{
+  position: absolute;
+  top: 0%;
+  left: 10%;
+  color: whitesmoke;
+  z-index: 2;
+}
+
 a div h2{
   margin-top: 3px;
   border-top: 0px;
@@ -578,7 +606,7 @@ a.navbar-brand{
 .yellow{
   background: #22253c;
   position: relative;
-  width: 450px;
+  width: 450px!important;
 }
 .bt{
   padding: 15px!important;
@@ -658,6 +686,7 @@ nav.shift ul li a:hover:after {
 }  
 .row-content{
 background-color: #143064;
+width: 465px;
 }
 
 .carousel-item {
@@ -679,29 +708,26 @@ min-height: 200px;
 .head-img{
 height: 70px;
 width: 80px;
-top: 0%;
-position: absolute;
+transform: translateY(-5%);
 }
 .jumbo{
 background-color: rgb(23, 23, 68)
 ;
 position: relative;
 height: 400px;
+width: 450px!important;
 }
 .heading h1{
 border-bottom: 1px solid whitesmoke;
 color: azure;
 font-weight: 800;
-position:absolute;
-right: 15%;
+transform: translate(40%);
 }
 .heading h2{
 display: none;
 }
 .signup{
-position: absolute;
-bottom: 0%;
-right: 60%;
+  transform: translate(-63%,120%);
 }
 header h3{
 color: #dedede;
@@ -710,5 +736,8 @@ top: 45%;
 right: 50%;
 border-bottom: 0.5px solid whitesmoke;
 font-style: italic;
+}
+.page-footer{
+  width: 450px!important;
 }
 }
