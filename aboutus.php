@@ -120,7 +120,7 @@ background-color: whitesmoke;
                                 <a class="dropdown-item" href="#">Raise a Complaint</a>
                             </div>
                         </li>
-                        <li class="nav-item">
+                        <li class="active" class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
                         <?php echo $string ?>

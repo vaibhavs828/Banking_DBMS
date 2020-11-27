@@ -112,11 +112,11 @@ background-color: whitesmoke;
                                 <a class="dropdown-item" href="#">Raise a Complaint</a>
                             </div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="aboutus.php">About</a>
+                        <li class="active" class="nav-item">
+                            <a  class="nav-link" href="aboutus.php">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">My Account</a>
+                            <a  class="nav-link" href="#">My Account</a>
                         </li>
                         
                         
