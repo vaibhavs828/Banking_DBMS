@@ -55,7 +55,7 @@
 							$_SESSION['name']=$name;
 							$_SESSION['start']= time(); // Taking now logged in time.
 							// // Ending a session in 30 minutes from the starting time.
-							$_SESSION['expire'] = $_SESSION['start'] + (2 * 60);
+							$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 							// header("location: index.php");
 							header("location: index.php");
 
