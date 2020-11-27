@@ -1,77 +1,3 @@
-<?php
-	session_start();
-	if(array_key_exists("logout",$_GET))
-	{
-		session_destroy();
-		header("location: index.php");
-		
-	}
-	else if((array_key_exists("login", $_SESSION) and $_SESSION["login"]))
-	{
-		header("location: index.php");
-	}
-	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
-	if(mysqli_connect_error())
-	{
-		die ('database connection error');
-	}
-	
-	$string='';
-	$email='';
-	$account_number='';
-	$name='';
-	if(array_key_exists("submit", $_POST))
-	{
-		if(!$_POST['login'] or !$_POST['password'])
-		{
-			$string='<div class="alert alert-danger" role="alert">
-  						Fill the form correctly!!.</div>';
-		}
-		else
-		{
-			$email=$_POST['login'];
-			$query="SELECT account_number,full_name from personal_info where '".$email."'=email";
-			if($result=mysqli_query($link,$query))
-			{
-				$row=mysqli_fetch_array($result);
-				if(!isset($row))
-				{
-					$string='<div class="alert alert-danger" role="alert">
-  						Incorrect LoginID or Password</div>';
-				}
-				else
-				{
-					$account_number=$row[0];
-					$name=$row[1];
-					$query="SELECT password from personal_info where ".$account_number."=account_number";
-					if($result=mysqli_query($link,$query))
-					{
-						$row=mysqli_fetch_array($result);
-						if($row[0]==$_POST['password'])
-						{
-							// $string='<div class="alert alert-success" role="alert">
-  					// 	Welcome back!! You are successfully logged in.</div>';
-							$_SESSION['login']=$account_number;
-							$_SESSION['name']=$name;
-							header("location: index.php");
-
-						}
-						else
-						{
-							$string='<div class="alert alert-danger" role="alert">
-  						Incorrect LoginID or Password</div>';
-
-						}
-					}
-
-
-				}
-			}
-
-		}
-
-	}
-?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -79,6 +5,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!--Google Font-->
 		<link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 	<title>Login Page</title>
@@ -97,7 +24,7 @@
 		</a>
 	</nav>-->
 
-	<div><?php echo $string?></div>
+	<div></div>
 	<div class="container">
 		<header>LOGIN</header>
 		<form method="post">
