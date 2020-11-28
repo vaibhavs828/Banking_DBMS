@@ -136,28 +136,41 @@ server with default setting (user 'root' with no password) */
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.php">Home 
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown bg-primary">
+                    <li class="nav-item dropdown bg-primary">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-expanded="false">
                                 Services
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
-                                <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
+                                <a class="dropdown-item" href="transaction.php">Transfer Money to own bank</a>
+                                <a class="dropdown-item" href="tootherbank.php">Transfer Money to other bank</a>
                                 <a class="dropdown-item" href="balance.php">current balance</a>
-                                <a class="dropdown-item" href="#">Raise a Complaint</a>
+                                <a class="dropdown-item" href="feedback.php">Raise a Complaint</a>
                             </div>
                         </li>
+                       
+                    <li class="nav-item dropdown bg-primary">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="profile.php">Profile</a>
+                                
+                                <a class="dropdown-item" href="transactionsummary.php">Transction details</a>
+                                <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
+                                
+                            </div>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="index.php">Home 
+                            </a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="aboutus.php">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">My Account</a>
-                        </li>
+                       
                         
                         
                     </ul>
@@ -165,8 +178,7 @@ server with default setting (user 'root' with no password) */
             <!--</div>-->
             </div>
         </nav>
-
-    <!--For a alert to check filled info-->
+<!--  end of navbar -->    <!--For a alert to check filled info-->
     <div class="alert alert-primary" role="alert">
         Go through the information you filled correctly before submitting.
     </div>
