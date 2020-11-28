@@ -144,7 +144,6 @@ form .button{
   .container{
   position: relative;
   max-width: 400px;
-  background: yellow;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -156,7 +155,6 @@ form .button{
   .container{
   position: relative;
   max-width: 350px;
-  background: green;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -168,7 +166,6 @@ form .button{
   .container{
   position: relative;
   max-width: 300px;
-  background: red;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -180,7 +177,6 @@ form .button{
   .container{
   position: relative;
   max-width: 2600px;
-  background: red;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
