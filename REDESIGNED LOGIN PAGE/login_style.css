@@ -6,17 +6,22 @@
   box-sizing: border-box;
 }
 body{
-  height: 100vh;
+  height: 100vh; 
   display: flex;
   align-items: center;
-  text-align: center;
+   text-align: center;
   font-family: sans-serif;
-  justify-content: center;
+   justify-content: center;
   background: url(b.jpg) no-repeat fixed center;
   background-size: cover;
   background-position: center;
-  /*background-color: white;*/
+  background-color: white;
 }
+.fuggy{
+  position: absolute;
+  top:0%;
+}
+
 
 .container{
   position: relative;
@@ -144,6 +149,7 @@ form .button{
   .container{
   position: relative;
   max-width: 400px;
+  background: yellow;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -155,6 +161,7 @@ form .button{
   .container{
   position: relative;
   max-width: 350px;
+  background: green;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -166,6 +173,7 @@ form .button{
   .container{
   position: relative;
   max-width: 300px;
+  background: red;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -177,6 +185,7 @@ form .button{
   .container{
   position: relative;
   max-width: 2600px;
+  background: red;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;

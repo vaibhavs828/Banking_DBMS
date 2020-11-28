@@ -149,7 +149,7 @@ if (!isset($_SESSION['count'])) {
 </head>
 <body>
 	<!-- Image and text for navbar-->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 fuggy">
             
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
