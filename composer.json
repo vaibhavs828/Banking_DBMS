@@ -3,6 +3,10 @@
     "description": "A project for education purpose",
     "type": "composer-plugin",
     "license": "MIT",
+    "require": {
+        "composer-plugin-api": "^1.1 || ^2.0",
+        "cypresslab/gitelephant": "^4.1"
+    },
     "authors": [
         {
             "name": "Ravishek",
@@ -17,8 +21,8 @@
         "squizlabs/php_codesniffer": "^3.5"
     },
     "scripts": {
-        "lint": "phplint --no-cache for_simulation/",
-        "phpcs": "phpcs --standard=PSR12 for_simulation/",
-        "phpcbf": "phpcbf --standard=PSR12 for_simulation/"
+        "lint": "phplint --no-cache phpf/",
+        "phpcs": "phpcs --standard=PSR12 phpf/",
+        "phpcbf": "phpcbf --standard=PSR12 phpf/"
     }
 }
