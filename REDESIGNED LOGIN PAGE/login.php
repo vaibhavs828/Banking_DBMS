@@ -82,7 +82,7 @@ if (!isset($_SESSION['count'])) {
 				$row=mysqli_fetch_array($result);
 				if(!isset($row))
 				{
-					$string='<div class="alert alert-danger" role="alert">
+					$string='<div class="alert alert-danger" role="alert" >
   						Incorrect LoginID or Password</div>';
 				}
 				else
@@ -141,10 +141,9 @@ if (!isset($_SESSION['count'])) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="login_style.css">
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	<link rel="icon" type="image/png" href="navicon.svg">
 
 </head>
@@ -208,18 +207,7 @@ if (!isset($_SESSION['count'])) {
 			<h1>Apna Bank</h1>
 		</div>-->
 	
-		<div><?php 
-	if(empty($str))
-{
-	if(empty($var2))
-	{echo $string;}
-	else
-	{echo $var2;}
-}
-else
-echo $str;
 	
-	?></div>
 
 	
 	
@@ -244,22 +232,44 @@ echo $str;
 	</form> --> 
 
 
+<div class="fuggy">
+<div >
+<?php 
+	if(empty($str))
+{
+	if(empty($var2))
+	{echo $string;}
+	else
+	{echo $var2;}
+}
+else
+echo $str;
+	
+	?>
+</div>
+</div>
 
-
-
-	<div class="container">
-		
-		<form method="post">
-		<?php
+<?php
 
 if (isset($_GET['msg']))
 {
   // echo '<div class="success_message"></p> <p></div>' ;
-   echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
+//    echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
+echo '<div class="fuggy">
+<div class="alert alert-danger" role="alert">
+Session Expired, please login again!
+</div>
+</div>';
+
 }
 
 ?> 
-<header>LOGIN</header>
+
+	<div class="container">
+		
+		<form method="post">
+	
+<h1>LOGIN</h1>
 			<div class="input-field">
 				<input type="text" name="login" required>
 				<label>Enter Email</label>
