@@ -203,7 +203,7 @@ echo $str;
 	
 	<?php
 
-if ($_GET['msg'])
+if (isset($_GET['msg']))
 {
   // echo '<div class="success_message"></p> <p></div>' ;
    echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
