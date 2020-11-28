@@ -67,14 +67,14 @@
 
 <body>
 
-    <div class="navdiv">
-        <nav class="navdel">
+    
+        <nav class="navdel bg-primary">
             <a class="navbar-brand" href="index.php">
                 <img src="navicon.svg" width="50" height="50" alt="" loading="lazy" id="navimg">
                 Apna Bank
             </a>
         </nav>
-    </div>
+    
 
     <div>
         <?php echo $string ?>
@@ -83,7 +83,7 @@
     <!--copy-->
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
-            <div class="user_card">
+            <div class="user_card " style="margin-top:100px;">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <img src="sad_emoji.png" class="brand_logo" alt="Logo">
