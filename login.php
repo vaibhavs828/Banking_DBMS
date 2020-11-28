@@ -36,8 +36,8 @@ if (!isset($_SESSION['count'])) {
 					   Your session is unlocked, Try now!</div>';
 	   $var='<input type="submit" name="submit" value="Sign In">';
 		  
-		  session_destroy("count");
-		  session_destroy("timeout");
+		//   session_destroy("count");
+		//   session_destroy("timeout");
 		  unset($_SESSION['count']);
 		  unset($_SESSION['timeout']);
 	  }
