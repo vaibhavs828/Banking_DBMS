@@ -19,9 +19,13 @@ if (!isset($_SESSION['count'])) {
 	  
 	  
   
-	  if(!$_SESSION['timeout']) 
+	  if(isset($_SESSION['timeout']) )
 	  {
-		  $_SESSION['timeout'] = time();
+		 
+	  }
+	  else
+	  {
+		$_SESSION['timeout'] = time();
 	  }
 	  $st = $_SESSION['timeout'] + 30; 
 	  // echo $st;//session time is 30 minutes
