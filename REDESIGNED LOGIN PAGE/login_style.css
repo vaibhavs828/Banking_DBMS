@@ -17,9 +17,10 @@ body{
   background-position: center;
   /*background-color: white;*/
 }
+
 .container{
   position: relative;
-  max-width: 400px;
+  max-width: 330px;
   background: whitesmoke;
   padding: 60px 40px;
   border-radius: 0.5em;
@@ -137,4 +138,52 @@ form .button{
 }
 .signup a:hover{
   text-decoration: underline;
+}
+
+@media screen and (max-width: 2200px) {
+  .container{
+  position: relative;
+  max-width: 400px;
+  background: yellow;
+  background: whitesmoke;
+  padding: 60px 40px;
+  border-radius: 0.5em;
+  box-shadow: 4px 8px 8px #005b74;
+}
+}
+
+@media screen and (max-width: 900px) {
+  .container{
+  position: relative;
+  max-width: 350px;
+  background: green;
+  background: whitesmoke;
+  padding: 60px 40px;
+  border-radius: 0.5em;
+  box-shadow: 4px 8px 8px #005b74;
+}
+}
+
+@media screen and (max-width: 400px) {
+  .container{
+  position: relative;
+  max-width: 300px;
+  background: red;
+  background: whitesmoke;
+  padding: 60px 40px;
+  border-radius: 0.5em;
+  box-shadow: 4px 8px 8px #005b74;
+}
+}
+
+@media screen and (max-width: 300px) {
+  .container{
+  position: relative;
+  max-width: 2600px;
+  background: red;
+  background: whitesmoke;
+  padding: 60px 40px;
+  border-radius: 0.5em;
+  box-shadow: 4px 8px 8px #005b74;
+}
 }

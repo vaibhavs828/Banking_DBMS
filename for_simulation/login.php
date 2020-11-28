@@ -1,5 +1,45 @@
 <?php
 	session_start();
+	
+if (!isset($_SESSION['count'])) {
+	$_SESSION['count'] = 0;
+  } 
+  
+  if($_SESSION['count']<3)
+  {
+	  $var='<input type="submit" name="submit" value="Sign In">';
+	  
+  }
+  if($_SESSION['count'] >= 3)
+  {
+	  // echo 'Your session is locked for 30 minutes.';
+	  $var2='<div class="alert alert-danger" role="alert">
+	  Your session is locked for 30 seconds.</div>';
+	  $var='<input type="submit" name="submit" value="Sign In"  disabled>';
+	  
+	  
+  
+	  if(!$_SESSION['timeout']) 
+	  {
+		  $_SESSION['timeout'] = time();
+	  }
+	  $st = $_SESSION['timeout'] + 30; 
+	  // echo $st;//session time is 30 minutes
+	  // echo time();
+	 
+	  if(time() >= $st) {
+		 $str='<div class="alert alert-danger" role="alert">
+					   Your session is unlocked, Try now!</div>';
+	   $var='<input type="submit" name="submit" value="Sign In">';
+		  
+		  session_destroy("count");
+		  session_destroy("timeout");
+		  unset($_SESSION['count']);
+		  unset($_SESSION['timeout']);
+	  }
+  
+  }
+  
 	if(array_key_exists("logout",$_GET))
 	{
 		session_destroy();
@@ -8,7 +48,6 @@
 	}
 	else if((array_key_exists("login", $_SESSION) and $_SESSION["login"]))
 	{
-		
 		header("location: index.php");
 	}
 	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
@@ -56,7 +95,7 @@
 							$_SESSION['name']=$name;
 							$_SESSION['start']= time(); // Taking now logged in time.
 							// // Ending a session in 30 minutes from the starting time.
-							$_SESSION['expire'] = $_SESSION['start'] + (2 * 60);
+							$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
 							// header("location: index.php");
 							header("location: index.php");
 
@@ -64,7 +103,8 @@
 						else
 						{
 							$string='<div class="alert alert-danger" role="alert">
-  						Incorrect LoginID or Password</div>';
+						  Incorrect LoginID or Password</div>';
+						  $_SESSION['count']++;
 
 						}
 					}
@@ -145,13 +185,25 @@
 	<!--<div class="name">
 			<h1>Apna Bank</h1>
 		</div>-->
-	<div class="container" ><?php echo $string?></div>
+	
+	<div class="container" ><?php 
+	if(empty($str))
+{
+	if(empty($var2))
+	{echo $string;}
+	else
+	{echo $var2;}
+}
+else
+echo $str;
+	
+	?></div>
 
 	<form class="box" method="post">
 	
 	<?php
 
-if ($_GET['msg'])
+if (isset($_GET['msg']))
 {
   // echo '<div class="success_message"></p> <p></div>' ;
    echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
@@ -161,7 +213,8 @@ if ($_GET['msg'])
 		<h1>LOGIN</h1>
 		<input type="text" name="login" placeholder="Enter Email">
 		<input type="password" name="password" placeholder="Enter Password">
-		<input type="submit" name="submit" value="Sign In">
+		<!-- <input type="submit" name="submit" value="Sign In"> -->
+		<?php echo $var?>
 		<div class="links">
 				<a href="forgotpassword.php">Forgot Password?</a>
 			</div>
@@ -172,8 +225,6 @@ if ($_GET['msg'])
 				<a href="newAccount.php">Create Account</a>
 			</div>
 	</form>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
