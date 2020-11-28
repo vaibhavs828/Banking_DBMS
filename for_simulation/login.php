@@ -19,9 +19,13 @@ if (!isset($_SESSION['count'])) {
 	  
 	  
   
-	  if(!$_SESSION['timeout']) 
+	  if(isset($_SESSION['timeout']) )
 	  {
-		  $_SESSION['timeout'] = time();
+		 
+	  }
+	  else
+	  {
+		$_SESSION['timeout'] = time();
 	  }
 	  $st = $_SESSION['timeout'] + 30; 
 	  // echo $st;//session time is 30 minutes
@@ -217,7 +221,7 @@ echo $str;
 	
 	<?php
 
-if ($_GET['msg'])
+if (isset($_GET['msg']))
 {
   // echo '<div class="success_message"></p> <p></div>' ;
    echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
