@@ -41,6 +41,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <!--External JS-->
+  
+
 </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
@@ -182,13 +184,13 @@
 						</div>
 
 <div class="d-flex justify-content-center mt-3 login_container">
-    <button class="btn login_btn" type="submit" name="Validate" value="Validate" onclick="ValidateEmail(document.form1.text1)">submit</button></div> 
+    <button class="btn login_btn" type="submit" name="Validate" value="Validate" onclick="ValidateEmail(document.form1.text1)">SUBMIT</button></div> 
 </form>
 </div>
 				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
+					<div class="d-flex justify-content-center links ">
                         <center>
-                        Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br><span><a href="newAccount.php" id="createNew">Create a new Account</a></span>
+                        Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br> <span><a href="newAccount.php" id="createNew" class="text-dark">Create a new Account</a></span>
                     </center>
 					</div>
 				</div>
