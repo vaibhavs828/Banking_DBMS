@@ -2,7 +2,7 @@
     
     session_start();
     $string='<li><a id="login" href="login.php">Login</a></li>';
-    $string1='<a href="newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
+    $string1='<a href="for_simulation/newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
  $string2='<a href="#" data-toggle="modal" data-target="#exampleModal" class="block main-div-1">';
  $string3='<a href="#" class="block main-div-2" data-toggle="modal" data-target="#exampleModal">';
  $string4='<a href="#" class="block main-div-3" data-toggle="modal" data-target="#exampleModal">';
