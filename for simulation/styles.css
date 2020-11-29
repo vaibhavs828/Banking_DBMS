@@ -249,7 +249,7 @@ margin-bottom: 10px;
     .div-4 h2{
       position: absolute;
       top: 0%;
-      left:35%;
+      left:18%;
       color:whitesmoke;
       z-index: 2;
     }  
@@ -283,7 +283,7 @@ margin-bottom: 10px;
     a div h2{
       margin-top: 30px;
      
-      border-bottom: 2px solid black;
+      border-bottom: 0px solid black;
       padding: 10px 10px 10px 10px;
       
     }   
