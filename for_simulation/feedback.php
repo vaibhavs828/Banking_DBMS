@@ -107,6 +107,7 @@
             <!--</div>-->
             </div>
         </nav>
+        <?php echo $string ?>
 <!--  end of navbar -->
      <!--
         <div class="top-content">
@@ -151,7 +152,7 @@
   
     <div class="container h-100">
         <div class="d-flex justify-content-center h-100">
-            <div class="user_card">
+            <div class="user_card h-100">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <img src="question.png" class="brand_logo" alt="Logo">
@@ -159,18 +160,24 @@
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form method="post">
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-2 mt-5 ml-4">
                             
-                            <p class="apology">Feedback or querry</p>
+                            <p class="apology text-center ml-3">Feedback or querry</p>
                             <!--<input type="text" name="" class="form-control input_user" value="" placeholder="Enter your feedback or querry here">-->
                             
                         </div>
                         <div class="input-group col-md-12 mb-2" id="email">
-                            <input type="text" name="feedback" class="form-control input_pass" value="" placeholder="Enter your feedback or querry here">
+                        
+                            <textarea type="text" name="feedback" class="form-control input_pass" value="" placeholder="Enter your feedback or querry here" style="width: 300px;
+  height: 150px;" ></textarea>
                         </div>
                         
-                            <div class="d-flex justify-content-center mt-3 login_container">
-                    <button type="submit" id="button" name="submit" class="btn login_btn">Confirm</button>
+
+                        <!-- <textarea id="w3review" name="w3review" rows="4" cols="50"  class="form-control input_pass" >
+At w3schools.com youy o
+</textarea> -->
+                            <div class="d-flex justify-content-center mt-3 login_container text-center">
+                    <button type="submit" id="button" name="submit" class="btn login_btn">CONFIRM</button>
                    </div>
                     </form>
                 </div>
@@ -186,7 +193,7 @@
         </div>
     </div>
     <div>
-       <?php echo $string ?>
+     
    </div>
     
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->

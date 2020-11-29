@@ -107,6 +107,7 @@
             <!--</div>-->
             </div>
         </nav>
+        <?php echo $string ?>
 <!--  end of navbar -->
      <!--
         <div class="top-content">
@@ -192,7 +193,7 @@ At w3schools.com youy o
         </div>
     </div>
     <div>
-       <?php echo $string ?>
+     
    </div>
     
         <!-- jQuery and Bootstrap Bundle (includes Popper) -->
