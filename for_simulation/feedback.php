@@ -51,6 +51,14 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <!--External JS-->
+    <style>
+    .funny{
+        position:absolute;
+        top:10.2%;
+        width:100%;
+        
+    }
+    </style>
 </head>
     <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
@@ -107,7 +115,8 @@
             <!--</div>-->
             </div>
         </nav>
-        <?php echo $string ?>
+        <div class="funny">
+        <?php echo $string ?></div>
 <!--  end of navbar -->
      <!--
         <div class="top-content">
@@ -150,9 +159,9 @@
     -->      
    <!--  alert if any -->
   
-    <div class="container h-100">
+    <div class="container h-100 ">
         <div class="d-flex justify-content-center h-100">
-            <div class="user_card h-100">
+            <div class="user_card h-100 mt-5 mb-5">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
                         <img src="question.png" class="brand_logo" alt="Logo">
