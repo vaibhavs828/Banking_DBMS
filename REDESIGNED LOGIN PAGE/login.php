@@ -289,7 +289,7 @@ Session Expired, please login again!
 
 		<div class="signup">
 			<a href="forgotpassword.php">Forgot Password?</a>
-			<br><br><br><br>
+			<br><br>
 			<a href="newAccount.php">Create an account</a>
 		</div>
 	</div>
