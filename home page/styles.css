@@ -266,7 +266,7 @@ margin-bottom: 10px;
     .div-4 h2{
       position: absolute;
       top: 0%;
-      left:35%;
+      left:18%;
       color:whitesmoke;
       z-index: 2;
     }  
@@ -291,7 +291,7 @@ margin-bottom: 10px;
     .div-5 h2{
       position: absolute;
       top: 0%;
-      left:35%;
+      left:23%;
       color: black;
      
     } 
@@ -300,12 +300,12 @@ margin-bottom: 10px;
     a div h2{
       margin-top: 30px;
      
-      border-bottom: 2px solid whitesmoke;
+      /*border-bottom: 2px solid whitesmoke;*/
       padding: 10px 10px 10px 10px;
       
     }   
     .div-5 h2{
-      border-bottom: 2px solid whitesmoke;
+     /* border-bottom: 2px solid whitesmoke;*/
       margin-top: 3px;
       color: ghostwhite;
     }
@@ -490,7 +490,7 @@ margin:0px;
   border: 0.5px solid aliceblue;
 }
 h5{
-  border-bottom: 1px solid aliceblue;
+  /*border-bottom: 1px solid aliceblue;*/
 }
 /*media queries for reponsiveness*/  
 @media only screen and (max-width: 1200px) and (min-width: 800px)  {
@@ -591,7 +591,6 @@ h5{
   a div h2{
     margin-top: 3px;
     border-top: 0px;
-    border-bottom: 0px;
     padding: 0px;
     border-radius: 0px;
   }
@@ -732,7 +731,7 @@ h5{
   width: 100%!important;
   }
   .heading h1{
-  border-bottom: 1px solid whitesmoke;
+ /* border-bottom: 1px solid whitesmoke;*/
   color: azure;
   font-weight: 800;
   transform: translate(40%);
@@ -748,7 +747,7 @@ h5{
   position: absolute;
   top: 45%;
   right: 50%;
-  border-bottom: 0.5px solid whitesmoke;
+  /*border-bottom: 0.5px solid whitesmoke;*/
   font-style: italic;
   }
   .page-footer{
@@ -854,7 +853,6 @@ h5{
 a div h2{
   margin-top: 3px;
   border-top: 0px;
-  border-bottom: 0px;
   padding: 0px;
   border-radius: 0px;
 }
@@ -994,7 +992,7 @@ height: 400px;
 width: 450px!important;
 }
 .heading h1{
-border-bottom: 1px solid whitesmoke;
+/*border-bottom: 1px solid whitesmoke;*/
 color: azure;
 font-weight: 800;
 transform: translate(40%);
@@ -1010,7 +1008,7 @@ color: #dedede;
 position: absolute;
 top: 45%;
 right: 50%;
-border-bottom: 0.5px solid whitesmoke;
+/*border-bottom: 0.5px solid whitesmoke;*/
 font-style: italic;
 }
 .page-footer{

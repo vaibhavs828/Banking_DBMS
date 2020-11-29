@@ -786,7 +786,7 @@
     <?php echo $string5 ?>
       <div class="div-5">
         <h2>Transfer Within Bank</h2>
-        <svg width="570" height="363" viewBox="0 0 570 363" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <svg width="530" height="363" viewBox="0 0 570 363" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
      <rect id="Image" width="570" height="363" fill="url(#pattern0)"/>
 <defs>
 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -1043,8 +1043,8 @@
             <!-- Content -->
             <h6 class="text-uppercase font-weight-bold">Apna Bank</h6>
             <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-            <p>Please do not believe any entity using Apna Bank logos & branding to request the public for money
-                in exchange for opening a Customer Service Point.</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda, omnis ut qui quod iusto sapiente minima nemo impedit. Eum quaerat quibusdam iste facere aliquam perspiciatis
+            </p>
 
         </div>
         <!-- Grid column -->
