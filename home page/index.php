@@ -1,8 +1,8 @@
 <?php 
     
     session_start();
-    $string='<li><a id="login" href="login.php">Login</a></li>';
-    $string1='<a href="newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
+    $string='<li><a id="login" href="for_simulation/login.php">Login</a></li>';
+    $string1='<a href="for_simulation/newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
  $string2='<a href="#" data-toggle="modal" data-target="#exampleModal" class="block main-div-1">';
  $string3='<a href="#" class="block main-div-2" data-toggle="modal" data-target="#exampleModal">';
  $string4='<a href="#" class="block main-div-3" data-toggle="modal" data-target="#exampleModal">';
@@ -12,14 +12,14 @@
     $for_animation='<script src="apps.js"></script>';
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
-        $string='<li><a id="logout" href="login.php?logout=1">Logout</a></li>';
-        $string1='<a href="feedback.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Raise a Complaint</a>';
+        $string='<li><a id="logout" href="for_simulation/login.php?logout=1">Logout</a></li>';
+        $string1='<a href="for_simulation/feedback.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Raise a Complaint</a>';
         $for_animation='';
-        $string2='<a href="profile.php" class="block main-div-1">';
-        $string3='<a href="balance.php" class="block main-div-2">';
+        $string2='<a href="for_simulation/profile.php" class="block main-div-1">';
+        $string3='<a href="for_simulation/balance.php" class="block main-div-2">';
         $string4='<a href="#" class="block main-div-3">';
-        $string5='<a href="transaction.php" class="block main-div-5">';
-        $string6='<a href="tootherbank.php" class="block main-div-4">';
+        $string5='<a href="for_simulation/transaction.php" class="block main-div-5">';
+        $string6='<a href="for_simulation/tootherbank.php" class="block main-div-4">';
         
     }
     
@@ -66,16 +66,16 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">   
   <ul>
         <li><a href="#" class="active">Home</a></li>
-        <li><a href="aboutus.php">About</a></li>
+        <li><a href="for_simulation/aboutus.php">About</a></li>
         <li><div class="dropdown show">
   <a class="dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Transactions
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="transaction.php">transaction within Bank</a>
+    <a class="dropdown-item" href="for_simulation/transaction.php">transaction within Bank</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="tootherbank.php">transaction on diferent bank</a>
+    <a class="dropdown-item" href="for_simulation/tootherbank.php">transaction on diferent bank</a>
   </div>
 </div></li>
 <li class="nav-item dropdown">
@@ -83,16 +83,16 @@
     Account
   </a>
   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="balance.php">Current Balance</a>
+    <a class="dropdown-item" href="for_simulation/balance.php">Current Balance</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="transactionsummary.php">Transactions Summary</a>
+    <a class="dropdown-item" href="for_simulation/transactionsummary.php">Transactions Summary</a>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="deleteAccount.php">Delete Account</a>
+    <a class="dropdown-item" href="for_simulation/deleteAccount.php">Delete Account</a>
 
   </div>
 </li>
         <?php echo $string ?>
-        <li><a href="profile.php
+        <li><a href="for_simulation/profile.php
         ">Profile</a></li>
 
       </ul>
