@@ -7,7 +7,8 @@ if (!isset($_SESSION['count'])) {
   
   if($_SESSION['count']<3)
   {
-	  $var='<input type="submit" name="submit" value="Sign In">';
+	//   $var='<input type="submit" name="submit" value="Sign In">';
+	$var=' <button type="submit" name="submit" >SIGN IN</button>';
 	  
   }
   if($_SESSION['count'] >= 3)
@@ -15,7 +16,8 @@ if (!isset($_SESSION['count'])) {
 	  // echo 'Your session is locked for 30 minutes.';
 	  $var2='<div class="alert alert-danger" role="alert">
 	  Your session is locked for 30 seconds.</div>';
-	  $var='<input type="submit" name="submit" value="Sign In"  disabled>';
+	//   $var='<input type="submit" name="submit" value="Sign In"  disabled>';
+	$var=' <button type="submit" name="submit" disabled>SIGN IN</button>';
 	  
 	  
   
@@ -28,14 +30,14 @@ if (!isset($_SESSION['count'])) {
 		$_SESSION['timeout'] = time();
 	  }
 	  $st = $_SESSION['timeout'] + 30; 
-	  // echo $st;//session time is 30 minutes
+	  // echo $st;//session time is 30 seconds
 	  // echo time();
 	 
 	  if(time() >= $st) {
 		 $str='<div class="alert alert-danger" role="alert">
 					   Your session is unlocked, Try now!</div>';
 	   $var='<input type="submit" name="submit" value="Sign In">';
-		  
+	   $var=' <button type="submit" name="submit" >SIGN IN</button>';  
 		//   session_destroy("count");
 		//   session_destroy("timeout");
 		  unset($_SESSION['count']);
@@ -80,7 +82,7 @@ if (!isset($_SESSION['count'])) {
 				$row=mysqli_fetch_array($result);
 				if(!isset($row))
 				{
-					$string='<div class="alert alert-danger" role="alert">
+					$string='<div class="alert alert-danger" role="alert" >
   						Incorrect LoginID or Password</div>';
 				}
 				else
@@ -136,8 +138,10 @@ if (!isset($_SESSION['count'])) {
 <head>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--Google Font-->
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<title>Login Page</title>
 	<link rel="stylesheet" type="text/css" href="login_style.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
@@ -145,8 +149,8 @@ if (!isset($_SESSION['count'])) {
 </head>
 <body>
 	<!-- Image and text for navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
-            <!--<div class="container-fluid">-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 fuggy">
+            
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                     Apna Bank
@@ -196,15 +200,41 @@ if (!isset($_SESSION['count'])) {
                         
                     </ul>
                 </div>
-            <!--</div>-->
             </div>
-        </nav>
+    </nav> -->
 <!--  end of navbar -->
 	<!--<div class="name">
 			<h1>Apna Bank</h1>
 		</div>-->
 	
-	<div class="container" ><?php 
+	
+
+	
+	
+
+	<!-- <form class="box" method="post"> -->
+	
+	
+		<!-- <h1>LOGIN</h1>
+		<input type="text" name="login" placeholder="Enter Email">
+		<input type="password" name="password" placeholder="Enter Password">
+		 <input type="submit" name="submit" value="Sign In"> -->
+		
+		<!-- <div class="links">
+				<a href="forgotpassword.php">Forgot Password?</a>
+			</div>
+			<br>
+			<br>
+			<br/>
+			<div class="links">
+				<a href="newAccount.php">Create Account</a>
+			</div>
+	</form> --> 
+
+
+<div class="fuggy">
+<div >
+<?php 
 	if(empty($str))
 {
 	if(empty($var2))
@@ -215,40 +245,75 @@ if (!isset($_SESSION['count'])) {
 else
 echo $str;
 	
-	?></div>
+	?>
+</div>
+</div>
 
-	<form class="box" method="post">
-	
-	<?php
+<?php
 
 if (isset($_GET['msg']))
 {
   // echo '<div class="success_message"></p> <p></div>' ;
-   echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
+//    echo '<div><h6 style="color:red; font-weight:600;" >Session Expired, please login again!<h6></div>';
+echo '<div class="fuggy">
+<div class="alert alert-danger" role="alert">
+Session Expired, please login again!
+</div>
+</div>';
+
 }
 
 ?> 
-		<h1>LOGIN</h1>
-		<input type="text" name="login" placeholder="Enter Email">
-		<input type="password" name="password" placeholder="Enter Password">
-		<!-- <input type="submit" name="submit" value="Sign In"> -->
-		<?php echo $var?>
-		<div class="links">
-				<a href="forgotpassword.php">Forgot Password?</a>
-			</div>
-			<br>
-		
-			<div class="links">
-				<a href="newAccount.php">Create Account</a>
-			</div>
-	</form>
 
-<!-- jQuery and Bootstrap Bundle (includes Popper) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+	<div class="container">
+		
+		<form method="post">
+	
+<h1>LOGIN</h1>
+			<div class="input-field">
+				<input type="text" name="login" required>
+				<label>Enter Email</label>
+			</div>
+			<div class="input-field">
+				<input class="pswrd" type="password" name="password" required>
+				<span class="show">SHOW</span>
+				<label>Enter Password</label>
+			</div>
+			<div class="button" name="submit">
+				<div class="inner">
+				</div>
+				<?php echo $var?>
+				<!-- <button type="submit" formaction="index.php">SIGN IN</button> -->
+			</div>
+		</form>
+
+		<div class="signup">
+			<a href="forgotpassword.php">Forgot Password?</a>
+			<br><br><br><br>
+			<a href="newAccount.php">Create an account</a>
+		</div>
+	</div>
+	<script>
+		var input = document.querySelector('.pswrd');
+		var show = document.querySelector('.show');
+		show.addEventListener('click', active);
+		function active() {
+			if (input.type === "password") {
+				input.type = "text";
+				show.style.color = "#1DA1F2";
+				show.textContent = "HIDE";
+			} else {
+				input.type = "password";
+				show.textContent = "SHOW";
+				show.style.color = "#111";
+			}
+		}
+	</script>
+
+
+
+
+
+
 </body>
 </html>
