@@ -44,18 +44,17 @@ server with default setting (user 'root' with no password) */
         $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
         $password=$_POST['password'];
         $dob=$_POST['dob'];
-        $d1 = new DateTime($string);
-        $d2 = new DateTime($_POST['dob']);
+        $d1 =new DateTime($currentDate);
+        $d2  = new DateTime($_POST['dob']);
 
         $diff = $d2->diff($d1);
         if(strlen($phone_number)==10)
         {
             // Attempt insert query execution
-            if($diff->y<18)
-            {
-                $string='<div class="alert alert-danger" role="alert">
-                            Age must be 18 or above</div>';
-
+            if($diff->y<18 )
+            {   
+					$string='<div class="alert alert-danger" role="alert">
+								Age must be 18 or above</div>';
             }
             else
             {    
@@ -297,12 +296,15 @@ server with default setting (user 'root' with no password) */
                         <div class="col-md-12 mb-3">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password"
-                                id="password" required>
+                                id="password" minlength="7"  required>
+								<div class="invalid-feedback">
+										Please password with atleast 7 characters
+								</div>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" placeholder="Confirm your Password"
-                                name="confirmPassword" id="confirmPassword" required>
+                                name="confirmPassword" id="confirmPassword" minlength="7" required>									
                         </div>
                     </div>
                 </div>
