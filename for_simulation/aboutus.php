@@ -258,17 +258,17 @@
 
 
         <!-- Footer Links -->
-        <div class="bg-primary">
+        <div style="background-color:#1C2331;">
 
 
-            <div  style="background-color:#4285F4;">
+            <div  style="background-color:#3F729B;">
                 <div class="container">
 
                     <!-- Grid row-->
                     <div class="row py-4 d-flex align-items-center">
 
                         <!-- Grid column -->
-                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0 text-white">
                             <h6 class="mb-0">Get connected with us on social networks!</h6>
                         </div>
                         <!-- Grid column -->
@@ -277,11 +277,11 @@
                         <div class="col-md-6 col-lg-7 text-center text-md-right  " >
 
                             <!-- Facebook -->
-                            <a class="fb-ic text-dark" href="https://www.facebook.com/">
+                            <a class="fb-ic text-white" href="https://www.facebook.com/">
                                 <i class="fab fa-facebook-f white-text mr-4"> </i>
                             </a>
                             <!-- Twitter -->
-                            <a class="tw-ic text-dark" href="https://twitter.com/">
+                            <a class="tw-ic text-white" href="https://twitter.com/">
                                 <i class="fab fa-twitter white-text mr-4"> </i>
                             </a>
                             <!-- Google +-->
@@ -289,11 +289,11 @@
                             <i class="fab fa-google-plus-g white-text mr-4"> </i>
                         </a>-->
                             <!--Linkedin -->
-                            <a class="li-ic text-dark" href="https://in.linkedin.com/">
+                            <a class="li-ic text-white" href="https://in.linkedin.com/">
                                 <i class="fab fa-linkedin-in white-text mr-4"> </i>
                             </a>
                             <!--Instagram-->
-                            <a class="ins-ic text-dark" href="https://www.instagram.com/">
+                            <a class="ins-ic text-white" href="https://www.instagram.com/">
                                 <i class="fab fa-instagram white-text"> </i>
                             </a>
 
@@ -303,20 +303,22 @@
 
                     </div>
                     <!-- Grid row-->
+                    <!-- rahul  -->
+                   
 <hr>
                 </div>
             </div>
             
-            <div class="container text-center text-md-left mt-5 " style="bac" >
+            <div class="container text-center text-md-left mt-5 " style="bac"  >
 
                 <!-- Grid row -->
-                <div class="row mt-3 dark-grey-text">
+                <div class="row mt-3 text-white">
 
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
 
                         <!-- Content -->
-                        <h6 class="text-uppercase font-weight-bold">Apna Bank</h6>
+                        <h6 class="text-uppercase font-weight-bold text-white">Apna Bank</h6>
                         <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                         <p>Please do not believe any entity using Apna Bank logos & branding to request the public for
                             money
@@ -396,7 +398,9 @@
         <!-- Footer Links -->
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center text-black-50 py-3 " style="background-color:#0d47a1;">© 2020 Copyright:
+        <!-- <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"> -->
+        
+        <div class="footer-copyright text-center text-white py-3 " style="background-color:#1C2331;">© 2020 Copyright:
             Apna Bank
             <!--<a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
         </div>
