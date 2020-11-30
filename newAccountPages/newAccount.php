@@ -45,44 +45,35 @@ server with default setting (user 'root' with no password) */
         $password=$_POST['password'];
         $dob=$_POST['dob'];
         $d1 =new DateTime($currentDate);
-        $d2  = new DateTime($_POST['dob']);
+        $d2 = new DateTime($_POST['dob']);
 
         $diff = $d2->diff($d1);
-        if(strlen($phone_number)==10)
-        {
-            // Attempt insert query execution
-            if($diff->y<18 )
-            {   
-					$string='<div class="alert alert-danger" role="alert">
-								Age must be 18 or above</div>';
-            }
-            else
-            {    
-                $query="SELECT count(email) from personal_info where '".$email."'=email";
-                $result=mysqli_query($link,$query);
-                $row=mysqli_fetch_array($result);
-                if($row[0]==0)
-                {
-                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
-                    			values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
-                    if(mysqli_query($link, $sql)){
-                        
-                        $last_id = mysqli_insert_id($link);     // Obtain last inserted id
-                        //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
-                        header("location: login.php");
-                    }
-                }
-                else
-                {
-                     $string='<div class="alert alert-danger" role="alert">
-                            This email id has already been used.Try another!!</div>';
-                }
-            }
+        if($diff->y<18 )
+        {   
+                $string='<div class="alert alert-danger" role="alert">
+                            Age must be 18 or above</div>';
         }
         else
-        {
-                $string='<div class="alert alert-danger" role="alert">
-                        wrong mobile number</div>';
+        {    
+            $query="SELECT count(email) from personal_info where '".$email."'=email";
+            $result=mysqli_query($link,$query);
+            $row=mysqli_fetch_array($result);
+            if($row[0]==0)
+            {
+                $query = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
+                            values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
+                if(mysqli_query($link, $query)){
+                    
+                     // Obtain last inserted id
+                    //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
+                    header("location: login.php");
+                }
+            }
+            else
+            {
+                 $string='<div class="alert alert-danger" role="alert">
+                        This email id has already been used.Try another!!</div>';
+            }
         }
     }
 
@@ -215,7 +206,7 @@ server with default setting (user 'root' with no password) */
 
                 <div class="col-md-3 mb-3">
                     <label for="phone">Contact number</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" pattern="[0-9]{10}" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -297,14 +288,14 @@ server with default setting (user 'root' with no password) */
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password"
                                 id="password" minlength="7"  required>
-								<div class="invalid-feedback">
-										Please provide password with atleast 7 characters
-								</div>
+                                <div class="invalid-feedback">
+                                        Please provide password with atleast 7 characters
+                                </div>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" placeholder="Confirm your Password"
-                                name="confirmPassword" id="confirmPassword" minlength="7" required>									
+                                name="confirmPassword" id="confirmPassword" minlength="7" required>                                 
                         </div>
                     </div>
                 </div>
