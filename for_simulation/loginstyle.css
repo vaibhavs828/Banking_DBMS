@@ -2,7 +2,7 @@
 *{
   margin: 0;
   padding: 0;
-  border-radius: 5px;
+ /* border-radius: 5px;*/
   box-sizing: border-box;
 }
 body{
@@ -10,7 +10,7 @@ body{
   /* display: flex; */
   align-items: center;
    text-align: center;
-  font-family: sans-serif;
+  font-family: 'Mulish', sans-serif;
    justify-content: center;
   background: url(b.jpg) no-repeat fixed center;
   background-size: cover;
@@ -24,7 +24,21 @@ body{
   margin-top: 63px;
   
 }
-
+#nm{
+  letter-spacing: 2px;
+}
+.dropdown-menu{
+	background-color: #007bff;
+	border: none !important;
+}
+.dropdown-item{
+	color: #70abff !important;
+	letter-spacing: 2px;
+}
+.dropdown>.dropdown-menu>a:hover {
+ 	color: #cce5ff !important;
+	background-color: transparent;
+}
 
 .container{
    
