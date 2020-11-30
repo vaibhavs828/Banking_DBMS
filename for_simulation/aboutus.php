@@ -209,14 +209,11 @@
 
                 <div>
 
-                    <h5 class="section-title h2">OUR HISTORY</h5>
+                    <h5 class="section-title h2">OUR CULTURE</h5>
                     <hr class="w-25 mx-auto pt-5">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos placeat voluptatibus minima
-                        dolorem aperiam qui quasi unde, repellendus deleniti distinctio perspiciatis accusamus quaerat
-                        dicta architecto exercitationem possimus assumenda in. Dolorem, unde, officiis quis id voluptate
-                        praesentium qui ab sed aliquid cum dicta sapiente saepe voluptas, vel atque vitae! Labore
-                        consectetur doloremque sunt mollitia ipsam maiores excepturi voluptates ipsa ratione cumque.</p>
+                    <p>At Bank of America, our culture comes from how we run the company every day. At the heart of our responsible growth strategy is our commitment to "act responsibly," which includes our commitments to ethical behavior, acting with integrity and complying with laws, rules, regulations and policies that reinforce such behavior.
 
+We recognize that cultivating a strong culture is an ongoing effort, fostered day after day in both formal and informal ways. Building a unified culture requires thoughtful, purposeful action. This work helped us bring together all of our employees - from different businesses, companies, and countries - to be aligned to our purpose of making financial lives better.</p>
 
                 </div>
             </article>
@@ -231,17 +228,12 @@
 
                 <div>
 
-                    <h5 class="section-title h2">OUR BUSINESS</h5>
+                    <h5 class="section-title h2">OUR STRATEGY</h5>
                     <hr class="w-25 mx-auto pt-5">
 
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum officiis explicabo, non quod ea
-                        atque nihil ut! Delectus blanditiis repudiandae eum maxime esse harum maiores tempore at,
-                        voluptate vero porro quasi. Eaque error, praesentium voluptas molestiae illo, libero minima
-                        velit quis qui ut voluptatum ex rerum sapiente dolores pariatur fugiat magni eius. Officia
-                        molestiae earum consectetur odit pariatur molestias voluptas dolores architecto illo iure atque
-                        nulla voluptate consequuntur minima, harum ipsum facilis libero hic quos ullam? Necessitatibus,
-                        delectus quod inventore doloribus sed labore eaque provident sit magni est ratione soluta beatae
-                        officiis veritatis omnis quae, possimus cumque nam. Dolore, unde.</p>
+                    <p>Our commitment to responsible growth is resolute.
+
+Responsible growth has four pillars: We have to grow — no excuses. We have to grow by delivering more for our customers and clients. We have to grow by managing risk well. And, our growth must be sustainable. Sustainable means we have to share our success with our communities, we have to be a great place to work for our teammates, and we have to drive operational excellence. This creates the ability to reinvest the savings back into our team, our capabilities, our client experience, and our communities and shareholders.</p>
 
                 </div>
             </article>
