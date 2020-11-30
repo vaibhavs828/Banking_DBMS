@@ -144,7 +144,7 @@ if (!isset($_SESSION['count'])) {
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<title>Login Page</title>
 	<!-- <link rel="stylesheet" href="loginstyle.css"> -->
-	<link rel="stylesheet" type="text/css" href="login_style.css">
+	<link rel="stylesheet" type="text/css" href="loginstyle.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
 
 </head>
