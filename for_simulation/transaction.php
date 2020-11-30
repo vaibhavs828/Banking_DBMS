@@ -272,7 +272,10 @@
                     <div class="section-3">
                         <div class="items">
                             <label for="amount">Amount</label>
-                            <input  name="amount" type="text" class="form-control" id="input" placeholder="" required>
+                            <input  name="amount" type="number" min="1" max="10000" class="form-control" id="input" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Amount should be greater than zero.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -313,6 +316,7 @@
         })();
     </script>
     <!--TILL HERE-->
+    
 
 
 
