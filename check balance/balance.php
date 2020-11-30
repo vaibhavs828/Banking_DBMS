@@ -150,7 +150,7 @@
             
         
           </table>
-          <div class="color2 text-center"><a href="../transaction summary/transactionsummary.html">click to know last 5 transactions details</a></div>
+          <div class="color2 text-center"><a href="transactionsummary.php">click to know transactions details</a></div>
     </div>
 
    
