@@ -50,7 +50,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <!--Google Font-->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
@@ -58,11 +60,12 @@
 
     <link rel="icon" type="image/png" href="navicon.svg" >
    <!--  External CSS -->
-    <link rel="stylesheet" type="text/css" href="balance_style.css">
+    <link rel="stylesheet" type="text/css" href="balancestyle.css">
   </head>
+  
   <body>
   <!--   Navigation bar starts here -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 ">
             <!--<div class="container-fluid">-->
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -115,21 +118,204 @@
                 </div>
             <!--</div>-->
             </div>
-        </nav>
+</nav>
 <!--  end of navbar -->
-    <!-- container of our balance -->
-    <div class="login_box">
-    <div class="color"><h2>Your Current Balance is as follows:</h2></div>
-      <div><?php echo $string ?></div>
-      <div><?php echo $string1 ?></div>
-      <div><?php echo $string2 ?></div>
-      <div class="color2"><a href="../transaction summary/transactionsummary.html">click to know last 5 transactions details</a></div>
-        <form  method="post">
-          
-        </form>
+   
+
+
+<div class="login_box container" style="overflow-x:auto;">
+        <h4 class="title"> YOUR CURRENT BALANCE IS AS FOLLOWS:</h4>
+        <table class="table table-hover">
+            
+            <tbody>
+              <tr>
+                <div class="ml-2"><th scope="row">Current balance</th></div>
+                <td><?php echo $row[0]?></td>
+                
+              </tr>
+              <tr>
+                <th scope="row">Customer Name</th>
+                <td><?php echo $row1[0]?></td>
+              
+              </tr>
+              <tr>
+                <th scope="row">Account Number</th>
+                <td><?php echo $row2[0]?></td>
+                
+               
+              </tr>
+             
+             
+            </tbody>
+            
+        
+          </table>
+          <div class="color2 text-center"><a href="../transaction summary/transactionsummary.html">click to know last 5 transactions details</a></div>
     </div>
 
+   
 
+
+
+
+
+
+
+
+
+<footer class="page-footer font-small ">
+
+
+   <!-- Footer Links -->
+   <div style="background-color:#1C2331;">
+
+
+    <div  style="background-color:#3F729B;">
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0 text-white">
+                    <h6 class="mb-0">Get connected with us on social networks!</h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right  " >
+
+                    <!-- Facebook -->
+                    <a class="fb-ic text-white" href="https://www.facebook.com/">
+                        <i class="fab fa-facebook-f white-text mr-4"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a class="tw-ic text-white" href="https://twitter.com/">
+                        <i class="fab fa-twitter white-text mr-4"> </i>
+                    </a>
+                    <!-- Google +-->
+                    <!-- <a class="gplus-ic">
+                    <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                </a>-->
+                    <!--Linkedin -->
+                    <a class="li-ic text-white" href="https://in.linkedin.com/">
+                        <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic text-white" href="https://www.instagram.com/">
+                        <i class="fab fa-instagram white-text"> </i>
+                    </a>
+
+                </div>
+                
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+            <!-- rahul  -->
+           
+             <hr>
+        </div>
+    </div>
+    
+    <div class="container text-center text-md-left mt-5 " style="bac"  >
+
+        <!-- Grid row -->
+        <div class="row mt-3 text-white">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+                <!-- Content -->
+                <h6 class="text-uppercase font-weight-bold text-white">Apna Bank</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>Please do not believe any entity using Apna Bank logos & branding to request the public for
+                    money
+                    in exchange for opening a Customer Service Point.</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <!-- Links -->
+                <!--<h6 class="text-uppercase font-weight-bold">OUR OFFERINGS</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+                <a class="dark-grey-text" href="#!">Savings Account</a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href="#!">Current Account</a>
+            </p>-->
+                <!-- <p>
+                <a class="dark-grey-text" href="#!">BrandFlow</a>
+            </p> -->
+                <!-- <p>
+                <a class="dark-grey-text" href="#!">Bootstrap Angular</a>
+            </p> -->
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <!-- Links -->
+                <!--<h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+                <a class="dark-grey-text" href="#!">Your Account</a>
+            </p>-->
+                <!-- <p>
+                <a class="dark-grey-text" href="#!">Become an Affiliate</a>
+            </p> -->
+                <!-- <p>
+                <a class="dark-grey-text" href="#!">Shipping Rates</a>
+            </p> -->
+                <!--<p>
+                <a class="dark-grey-text" href="#!">Help</a>
+            </p>-->
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                <!-- Links -->
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fas fa-home mr-3"></i>Kumarswamy layout, Bengaluru ,India</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                <p>
+                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+
+            </div>
+            <!-- Grid column -->
+
+        </div>
+        <!-- Grid row -->
+
+    </div>
+   </div>
+
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+    <!-- <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;"> -->
+
+   <div class="footer-copyright text-center text-white py-3 " style="background-color:#1C2331;">© 2020 Copyright:
+    Apna Bank
+    <!--<a  style="color:white;" href="https://mdbootstrap.com/"> ApnaBank.com</a>-->
+  </div>
+    <!-- Copyright -->
+
+</footer>
     
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
