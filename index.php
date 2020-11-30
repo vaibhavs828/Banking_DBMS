@@ -1,7 +1,5 @@
-<?php
+<?php  
 
-    header("location:./for_simulation/index.php");
-
-
-
+	header("location:./for_simulation/index.php");
+		
 ?>
