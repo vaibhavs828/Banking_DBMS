@@ -143,13 +143,14 @@ if (!isset($_SESSION['count'])) {
     <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<title>Login Page</title>
+	<!-- <link rel="stylesheet" href="loginstyle.css"> -->
 	<link rel="stylesheet" type="text/css" href="login_style.css">
 	<link rel="icon" type="image/png" href="navicon.svg">
 
 </head>
 <body>
 	<!-- Image and text for navbar-->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 fuggy">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-3 funny">
             
                 <a class="navbar-brand" href="index.php" id="nm">
                     <img src="navicon.svg" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
@@ -201,7 +202,7 @@ if (!isset($_SESSION['count'])) {
                     </ul>
                 </div>
             </div>
-    </nav> -->
+    </nav>
 <!--  end of navbar -->
 	<!--<div class="name">
 			<h1>Apna Bank</h1>
