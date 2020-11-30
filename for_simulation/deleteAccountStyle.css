@@ -35,7 +35,7 @@ body{
     width: 150px;
 }
 
-.navdiv{
+.navdel{
     margin: 5px 0px 80px 10px;
     letter-spacing: 3px;
 }
@@ -135,4 +135,7 @@ p{
 }
 #companyMail{
     font-weight: bold;
+}
+.bg-primary{
+    background-color: transparent !important;
 }
