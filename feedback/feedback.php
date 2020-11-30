@@ -171,13 +171,13 @@
                     <form method="post">
                         <div class="input-group mb-2 mt-5 ml-4">
                             
-                            <p class="apology text-center ml-3">Feedback or query</p>
+                            <p class="apology text-center ml-3">Feedback or Query</p>
                             <!--<input type="text" name="" class="form-control input_user" value="" placeholder="Enter your feedback or querry here">-->
                             
                         </div>
                         <div class="input-group col-md-12 mb-2" id="email">
                         
-                            <textarea type="text" name="feedback" class="form-control input_pass" value="" placeholder="Enter your feedback or query here" style="width: 300px;
+                            <textarea type="text" name="feedback" class="form-control input_pass" value="" placeholder="Enter your feedback or Query here" style="width: 300px;
   height: 150px;" ></textarea>
                         </div>
                         
