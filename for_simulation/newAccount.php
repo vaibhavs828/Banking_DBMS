@@ -298,7 +298,7 @@ server with default setting (user 'root' with no password) */
                             <input type="password" class="form-control" placeholder="Enter Password" name="password"
                                 id="password" minlength="7"  required>
 								<div class="invalid-feedback">
-										Please password with atleast 7 characters
+										Please provide password with atleast 7 characters
 								</div>
                         </div>
                         <div class="col-md-12 mb-3">
