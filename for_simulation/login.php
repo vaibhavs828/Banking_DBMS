@@ -41,7 +41,7 @@ if (!isset($_SESSION['count'])) {
 		//   session_destroy("count");
 		//   session_destroy("timeout");
 		  unset($_SESSION['count']);
-		  unset($_SESSION['timeout']);
+		  unset($_SESSION['timeout']); s
 	  }
   
   }
