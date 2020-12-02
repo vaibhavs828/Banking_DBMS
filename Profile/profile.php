@@ -97,7 +97,7 @@
                             data-toggle="dropdown" aria-expanded="false">
                             Services
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="transaction.php">Send Money to own bank</a>
                             <a class="dropdown-item" href="tootherbank.php">Send Money to other bank</a>
                             <a class="dropdown-item" href="balance.php">current balance</a>

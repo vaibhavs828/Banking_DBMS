@@ -93,12 +93,13 @@ if (!isset($_SESSION['count'])) {
 					if($result=mysqli_query($link,$query))
 					{
 						$row=mysqli_fetch_array($result);
-						if($row[0]==$_POST['password'])
+						if($row[0]==md5(md5($email).$_POST['password']))
 						{
 							// $string='<div class="alert alert-success" role="alert">
   					// 	Welcome back!! You are successfully logged in.</div>';
 							$_SESSION['login']=$account_number;
 							$_SESSION['name']=$name;
+							$_SESSION['email']=$email;
 							$_SESSION['start']= time(); // Taking now logged in time.
 							// // Ending a session in 30 minutes from the starting time.
 							$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
@@ -167,7 +168,7 @@ if (!isset($_SESSION['count'])) {
                                 data-toggle="dropdown" aria-expanded="false">
                                 Services
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="transaction.php">Transfer Money to own bank</a>
                                 <a class="dropdown-item" href="tootherbank.php">Transfer Money to other bank</a>
                                 <a class="dropdown-item" href="balance.php">current balance</a>
@@ -180,7 +181,7 @@ if (!isset($_SESSION['count'])) {
                                 data-toggle="dropdown" aria-expanded="false">
                                 Account
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="profile.php">Profile</a>
                                 
                                 <a class="dropdown-item" href="transactionsummary.php">Transction details</a>
