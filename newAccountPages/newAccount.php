@@ -45,7 +45,8 @@ server with default setting (user 'root' with no password) */
         $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
         $password=md5(md5($email).$_POST['password']);
         $dob=$_POST['dob'];
-        $txn_password='';
+        $email_txn=bin2hex(random_bytes(4));
+        $txn_password=md5(md5($email).$email_txn);
         $d1 =new DateTime($currentDate);
         $d2  = new DateTime($_POST['dob']);
 
@@ -55,8 +56,8 @@ server with default setting (user 'root' with no password) */
             // Attempt insert query execution
             if($diff->y<18 )
             {   
-					$string='<div class="alert alert-danger" role="alert">
-								Age must be 18 or above</div>';
+                    $string='<div class="alert alert-danger" role="alert">
+                                Age must be 18 or above</div>';
             }
             else
             {    
@@ -66,11 +67,34 @@ server with default setting (user 'root' with no password) */
                 if($row[0]==0)
                 {
                     $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password)
-                    			values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password')";
+                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password')";
                     if(mysqli_query($link, $sql)){
                         
                         $last_id = mysqli_insert_id($link);     // Obtain last inserted id
                         //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
+                        // this section will managed automatic generated mail to the new user
+                        // and send them a one time trasaction password.
+                        require_once('phpmailer/PHPMailerAutoload.php');
+                            $mail= new PHPMailer();
+                            $mail->isSMTP();
+                            $mail->SMTPAuth=true;
+                            $mail->SMTPSecure='ssl';
+                            $mail->Host='smtp.gmail.com';
+                            $mail->Port='465';
+                            $mail->isHTML();
+                            $mail->Username='apnabankcc@gmail.com';
+                            $mail->Password='apnabankphp@2';
+                            $mail->SetFrom('no-reply@apnabank.com');
+                            $mail->Subject='Welcome '.$f_name;
+                            $mail->Body='We welcome you to Apna Bank.<br>
+                                            Thanks for choosing us.<br>
+                                            Your transaction password is '.$email_txn.'
+                                            .<br>You can change this by login into your account and modifying
+                                            transaction password.';
+                            $mail->AddAddress($email);
+                            $mail->Send();
+
+                        // email section ends here
                         header("location: login.php");
                     }
                 }
@@ -300,14 +324,14 @@ server with default setting (user 'root' with no password) */
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password"
                                 id="password" minlength="7"  required>
-								<div class="invalid-feedback">
-										Please provide password with atleast 7 characters
-								</div>
+                                <div class="invalid-feedback">
+                                        Please provide password with atleast 7 characters
+                                </div>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" placeholder="Confirm your Password"
-                                name="confirmPassword" id="confirmPassword" minlength="7" required>									
+                                name="confirmPassword" id="confirmPassword" minlength="7" required>                                 
                         </div>
                     </div>
                 </div>
