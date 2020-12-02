@@ -30,6 +30,7 @@ server with default setting (user 'root' with no password) */
     $dob='';
     $currentDate=date('Y-m-d');
     $string='';
+    $otp='';
     if(array_key_exists("submit",$_POST))
     {
         $f_name=$_POST['fname'];
@@ -66,8 +67,8 @@ server with default setting (user 'root' with no password) */
                 $row=mysqli_fetch_array($result);
                 if($row[0]==0)
                 {
-                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password)
-                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password')";
+                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password,otp)
+                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password','$otp')";
                     if(mysqli_query($link, $sql)){
                         
                         $last_id = mysqli_insert_id($link);     // Obtain last inserted id
