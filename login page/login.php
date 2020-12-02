@@ -93,7 +93,7 @@ if (!isset($_SESSION['count'])) {
 					if($result=mysqli_query($link,$query))
 					{
 						$row=mysqli_fetch_array($result);
-						if($row[0]==$_POST['password'])
+						if($row[0]==md5(md5($email).$_POST['password']))
 						{
 							// $string='<div class="alert alert-success" role="alert">
   					// 	Welcome back!! You are successfully logged in.</div>';

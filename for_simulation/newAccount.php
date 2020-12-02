@@ -26,6 +26,7 @@ server with default setting (user 'root' with no password) */
     $zip='';
     $full_address='';     //concatenating into single string
     $password='';
+    $txn_password='';
     $dob='';
     $currentDate=date('Y-m-d');
     $string='';
@@ -42,8 +43,9 @@ server with default setting (user 'root' with no password) */
         $state=$_POST['state'];
         $zip=$_POST['zip'];
         $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
-        $password=$_POST['password'];
+        $password=md5(md5($email).$_POST['password']);
         $dob=$_POST['dob'];
+        $txn_password='';
         $d1 =new DateTime($currentDate);
         $d2  = new DateTime($_POST['dob']);
 
@@ -53,8 +55,8 @@ server with default setting (user 'root' with no password) */
             // Attempt insert query execution
             if($diff->y<18 )
             {   
-					$string='<div class="alert alert-danger" role="alert">
-								Age must be 18 or above</div>';
+                    $string='<div class="alert alert-danger" role="alert">
+                                Age must be 18 or above</div>';
             }
             else
             {    
@@ -63,8 +65,8 @@ server with default setting (user 'root' with no password) */
                 $row=mysqli_fetch_array($result);
                 if($row[0]==0)
                 {
-                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password)
-                    			values ('$full_name','$email','$phone_number','$dob','$full_address','$password')";
+                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password)
+                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password')";
                     if(mysqli_query($link, $sql)){
                         
                         $last_id = mysqli_insert_id($link);     // Obtain last inserted id
@@ -164,6 +166,7 @@ server with default setting (user 'root' with no password) */
             <!--</div>-->
             </div>
         </nav>
+
 
     <!--For a alert to check filled info-->
     <div class="alert alert-primary" role="alert">
@@ -297,14 +300,14 @@ server with default setting (user 'root' with no password) */
                             <label for="password">Password</label>
                             <input type="password" class="form-control" placeholder="Enter Password" name="password"
                                 id="password" minlength="7"  required>
-								<div class="invalid-feedback">
-										Please provide password with atleast 7 characters
-								</div>
+                                <div class="invalid-feedback">
+                                        Please provide password with atleast 7 characters
+                                </div>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="confirmPassword">Confirm Password</label>
                             <input type="password" class="form-control" placeholder="Confirm your Password"
-                                name="confirmPassword" id="confirmPassword" minlength="7" required>									
+                                name="confirmPassword" id="confirmPassword" minlength="7" required>                                 
                         </div>
                     </div>
                 </div>
