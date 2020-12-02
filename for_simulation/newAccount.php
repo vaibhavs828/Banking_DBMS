@@ -45,7 +45,8 @@ server with default setting (user 'root' with no password) */
         $full_address=$address." ".$city." ".$state." ".$zip;     //concatenating into single string
         $password=md5(md5($email).$_POST['password']);
         $dob=$_POST['dob'];
-        $txn_password='';
+        $email_txn=bin2hex(random_bytes(4));
+        $txn_password=md5(md5($email).$email_txn);
         $d1 =new DateTime($currentDate);
         $d2  = new DateTime($_POST['dob']);
 
@@ -71,6 +72,29 @@ server with default setting (user 'root' with no password) */
                         
                         $last_id = mysqli_insert_id($link);     // Obtain last inserted id
                         //echo "Records inserted successfully. Last inserted ID is: " . $last_id;
+                        // this section will managed automatic generated mail to the new user
+                        // and send them a one time trasaction password.
+                        require_once('phpmailer/PHPMailerAutoload.php');
+                            $mail= new PHPMailer();
+                            $mail->isSMTP();
+                            $mail->SMTPAuth=true;
+                            $mail->SMTPSecure='ssl';
+                            $mail->Host='smtp.gmail.com';
+                            $mail->Port='465';
+                            $mail->isHTML();
+                            $mail->Username='apnabankcc@gmail.com';
+                            $mail->Password='apnabankphp@2';
+                            $mail->SetFrom('no-reply@apnabank.com');
+                            $mail->Subject='Welcome '.$f_name;
+                            $mail->Body='We welcome you to Apna Bank.<br>
+                                            Thanks for choosing us.<br>
+                                            Your transaction password is '.$email_txn.'
+                                            .<br>You can change this by login into your account and modifying
+                                            transaction password.';
+                            $mail->AddAddress($email);
+                            $mail->Send();
+
+                        // email section ends here
                         header("location: login.php");
                     }
                 }
