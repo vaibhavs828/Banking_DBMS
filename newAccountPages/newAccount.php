@@ -1,5 +1,7 @@
 <?php
     session_start();
+    $_SESSION['action']='';
+    
     $string='';
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
@@ -30,6 +32,7 @@ server with default setting (user 'root' with no password) */
     $dob='';
     $currentDate=date('Y-m-d');
     $string='';
+    $otp='';
     if(array_key_exists("submit",$_POST))
     {
         $f_name=$_POST['fname'];
@@ -66,8 +69,8 @@ server with default setting (user 'root' with no password) */
                 $row=mysqli_fetch_array($result);
                 if($row[0]==0)
                 {
-                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password)
-                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password')";
+                    $sql = "INSERT INTO personal_info(full_name,email,contact_number,dob,address,password,txn_password,otp)
+                                values ('$full_name','$email','$phone_number','$dob','$full_address','$password','$txn_password','$otp')";
                     if(mysqli_query($link, $sql)){
                         
                         $last_id = mysqli_insert_id($link);     // Obtain last inserted id
@@ -144,6 +147,7 @@ server with default setting (user 'root' with no password) */
         integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <!--External JS-->
     <script src="newAccount.js"></script>
+    <script src="cities.js"></script>
 </head>
 
 <body>
@@ -275,20 +279,24 @@ server with default setting (user 'root' with no password) */
 
 
             <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="city">City</label>
-                    <input type="text" class="form-control" name="city" id="city" required>
-                    <div class="invalid-feedback">
-                        Please provide a valid city.
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
+            <div class="col-md-6 mb-3">
                     <label for="state">State</label>
-                    <input type="text" class="form-control" name="state" id="state" required>
+                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="state" class="form-control" required></select>
+                   <!-- <input type="text" class="form-control" name="state" id="state" required>
                     <div class="invalid-feedback">
                         Please select a valid state.
-                    </div>
+                    </div> -->
                 </div>
+
+                <div class="col-md-3 mb-3">
+                    <label for="city">City</label>
+                    <select id ="state" class="form-control" name="city" required></select>
+                    <!--<input type="text" class="form-control" name="city" id="city" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>-->
+                </div>
+                
                 <div class="col-md-3 mb-3">
                     <label for="zip">Zip</label>
                     <input type="number" class="form-control" name="zip" id="zip" required>
@@ -362,7 +370,10 @@ server with default setting (user 'root' with no password) */
     </footer>
     <!-- Footer -->
 
-
+    <script language="javascript">print_state("sts");</script>
+    <script>$('.selectpicker').selectpicker({
+        dropupAuto: false
+    });</script>
     <!--THIS SCRIPT IS FOR CHECKING IF THE INFORMATION IS FILLED IN FORM-->
     <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
