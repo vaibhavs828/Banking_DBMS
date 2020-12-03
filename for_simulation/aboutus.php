@@ -161,7 +161,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">About</a>
+                        <a class="nav-link active" href="aboutus.php">About</a>
                     </li>
 
 

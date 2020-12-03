@@ -159,7 +159,7 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="aboutus.php">About</a>
                     </li>
 
