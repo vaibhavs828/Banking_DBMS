@@ -1,6 +1,8 @@
 <?php 
     
     session_start();
+    $_SESSION['action']='';
+    
     $string='<li><a id="login" href="login.php">Login</a></li>';
     $string1='<a href="newAccount.php" class="btn btn-outline-warning btn-lg " role="button" aria-pressed="true">Create New Account</a>';
  $string2='<a href="#" data-toggle="modal" data-target="#exampleModal" class="block main-div-1">';

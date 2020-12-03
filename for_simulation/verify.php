@@ -35,6 +35,7 @@
   </div>';
   if(array_key_exists('submit',$_POST))
   {
+    $_SESSION['action']='';
     if($_GET['reason']==1)
     {
         $query="SELECT txn_password,otp FROM personal_info WHERE ".$_SESSION['login']."=account_number";
@@ -68,24 +69,27 @@
                                      $string='<div class="container card text-white bg-success mb-3" style="max-width: 30rem;">
   <div class="card-header"><b>Success</b></div>
   <div class="card-body">
-    <h5 class="card-title">Transfer Successfull</h5>
+    <h5 class="card-title">Transfer Successful</h5>
     <p class="card-text">Ruppes '.$amount.' has been debited from your account.</p>
   </div>
 </div>';
                                      
                 } 
-                $_SESSION['amount']='';
-                $_SESSION['to_account']='';
-                $_SESSION['action']='';
 
         }
+        else
+        {
+          $string='<div class="container card text-white bg-danger mb-3" style="max-width: 30rem;">
+            <div class="card-header"><h1><b>Transfer Failed</b></h1></div>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"><h2>Authentication Failed.</h2></p>
+            </div>
+          </div>';
+        }
+        $_SESSION['amount']='';
+        $_SESSION['to_account']='';
       }
-      else
-      {
-         echo 'kuch garbar hai';
-
-      }
-
 
     }
   

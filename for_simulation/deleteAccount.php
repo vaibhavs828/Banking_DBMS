@@ -1,5 +1,7 @@
 <?php
     session_start();
+    $_SESSION['action']='';
+    
     if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
     
