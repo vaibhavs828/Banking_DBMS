@@ -196,7 +196,7 @@
                     <div class="d-flex justify-content-center links ">
                         <center>
                             Write to us at <br> <span id="companyMail"> apnabankcc@gmail.com </span> <br> or <br>
-                            <span><a href="newAccount.php" id="createNew" class="text-dark">Create a new
+                            <span><a href="newAccount.php" id="createNew" class="text-white">Create a new
                                     Account</a></span>
                         </center>
                     </div>
