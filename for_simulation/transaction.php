@@ -1,6 +1,6 @@
 <?php
-	session_start();
-	if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
+    session_start();
+    if(array_key_exists("login",$_SESSION) and $_SESSION["login"])
     {
         $now=time();
         if($now>$_SESSION['expire'])
@@ -10,11 +10,11 @@
           header('Location: login.php?msg=' . urlencode(base64_encode("You have been successfully logged out!")));
         }
     }
-	else
-	{
-		header("Location:login.php?p=1");
-	}
-	$link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
+    else
+    {
+        header("Location:login.php?p=1");
+    }
+    $link=mysqli_connect("remotemysql.com","IyUUdMcJn4","XU1HaiAhXC","IyUUdMcJn4");
     if(mysqli_connect_error())
     {
         die ('database connection error');
@@ -28,66 +28,91 @@
     $receiver='';
     if(array_key_exists("submit",$_POST))
     {
-		$to_account=$_POST['accountNumber'];
-		$amount=$_POST['amount'];
-		$from_account=$_SESSION['login'];
-    	if($to_account==$_SESSION['login']){
-    		$string='<div class="alert alert-danger" role="alert">
+        $to_account=$_POST['accountNumber'];
+        $amount=$_POST['amount'];
+        $from_account=$_SESSION['login'];
+        if($to_account==$_SESSION['login']){
+            $string='<div class="alert alert-danger" role="alert">
                         Enter where to in account number!!</div>';
-    	}
-    	else{
-	    	$query="SELECT count(*) from personal_info where ".$to_account."=account_number";
-			if($result=mysqli_query($link,$query))
-			{
-				$row=mysqli_fetch_array($result);
-				if($row[0]==0)
-				{
+        }
+        else{
+            $query="SELECT count(*) from personal_info where ".$to_account."=account_number";
+            if($result=mysqli_query($link,$query))
+            {
+                $row=mysqli_fetch_array($result);
+                if($row[0]==0)
+                {
                     $string='<div class="alert alert-danger" role="alert">
                         Enter a valid account number!!</div>';
-				}
-				else
-				{
-					 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
-					 if($result=mysqli_query($link,$query))
-						{
-							$row=mysqli_fetch_array($result);
-							if($row[0]<$amount)
-							{
-								$string='<div class="alert alert-danger" role="alert">
+                }
+                else
+                {
+                     $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+                     if($result=mysqli_query($link,$query))
+                        {
+                            $row=mysqli_fetch_array($result);
+                            if($row[0]<$amount)
+                            {
+                                $string='<div class="alert alert-danger" role="alert">
                         Not enough balance</div>';
-							}
-							else
-							{	
-								$query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
-								if(mysqli_query($link,$query))
-								{
-									 $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
-                                     $result=mysqli_query($link,$query);
-                                     $row=mysqli_fetch_array($result);
-                                     $sender=$row[0];
-                                     $query="SELECT current_balance FROM balance WHERE ".$to_account."=account_number";
-                                     $result=mysqli_query($link,$query);
-                                     $row=mysqli_fetch_array($result);
-                                     $receiver=$row[0];
-                                     $sender=$sender-$amount;
-                                     $receiver=$receiver+$amount;
-                                     $query="UPDATE balance set current_balance='$sender' WHERE ".$from_account."=account_number";
-                                     mysqli_query($link,$query);
-                                     $query="UPDATE balance set current_balance='$receiver' WHERE ".$to_account."=account_number";
-                                     mysqli_query($link,$query);
-                                     $string='<div class="alert alert-success" role="alert">
-                        Transaction successfull</div>';
+                            }
+                            else
+                            {   
+                                $_SESSION['to_account']=$to_account;
+                                $_SESSION['amount']=$amount;
+                                $_SESSION['action']=1;
+                                require_once('phpmailer/PHPMailerAutoload.php');
+                                
+                                $otp=mt_rand(100000,999999);
+                                $mail= new PHPMailer();
+                                $mail->isSMTP();
+                                $mail->SMTPAuth=true;
+                                $mail->SMTPSecure='ssl';
+                                $mail->Host='smtp.gmail.com';
+                                $mail->Port='465';
+                                $mail->isHTML();
+                                $mail->Username='apnabankcc@gmail.com';
+                                $mail->Password='apnabankphp@2';
+                                $mail->SetFrom('no-reply@apnabank.com');
+                                $mail->Subject='Transaction OTP';
+                                $mail->Body='your one time password is '.$otp;
+                                $mail->AddAddress($_SESSION['email']);
+                                $to_db=md5(md5($_SESSION['email']).$otp);
+                                $query="UPDATE personal_info SET otp='$to_db' WHERE ".$from_account."=account_number";
+                                $result=mysqli_query($link,$query);
+                                $mail->Send();
+                                header("location:verify.php?reason=1");
+                                // $query="INSERT INTO txn_within_bank(from_account, to_account,date_of_txn,amount) values('$from_account','$to_account','$date','$amount')";
+                                // if(mysqli_query($link,$query))
+                                // {
+
+                                     // $query="SELECT current_balance FROM balance WHERE ".$from_account."=account_number";
+          //                            $result=mysqli_query($link,$query);
+          //                            $row=mysqli_fetch_array($result);
+          //                            $sender=$row[0];
+          //                            $query="SELECT current_balance FROM balance WHERE ".$to_account."=account_number";
+          //                            $result=mysqli_query($link,$query);
+          //                            $row=mysqli_fetch_array($result);
+          //                            $receiver=$row[0];
+          //                            $sender=$sender-$amount;
+          //                            $receiver=$receiver+$amount;
+          //                            $query="UPDATE balance set current_balance='$sender' WHERE ".$from_account."=account_number";
+          //                            mysqli_query($link,$query);
+          //                            $query="UPDATE balance set current_balance='$receiver' WHERE ".$to_account."=account_number";
+          //                            mysqli_query($link,$query);
+          //                            $string='<div class="alert alert-success" role="alert">
+          //               Transaction successfull</div>';
                                      
-								}	
+                                //} 
 
-							}
-						}
-						
+                            }
+                        }
+                        
 
 
-				}
-			}
-		}
+                }
+            }
+        }
     }
 
 
@@ -145,10 +170,10 @@
         
       </div>
       <div class="section-3">
-      	<div class="items">
-      		<label class="label">Amount</label>
+        <div class="items">
+            <label class="label">Amount</label>
           <input type="text" class="input" placeholder="">
-      	</div>
+        </div>
       </div>
     </div>
    
@@ -172,7 +197,7 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
 
 
 
