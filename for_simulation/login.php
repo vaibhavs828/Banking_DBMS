@@ -99,6 +99,7 @@ if (!isset($_SESSION['count'])) {
   					// 	Welcome back!! You are successfully logged in.</div>';
 							$_SESSION['login']=$account_number;
 							$_SESSION['name']=$name;
+							$_SESSION['email']=$email;
 							$_SESSION['start']= time(); // Taking now logged in time.
 							// // Ending a session in 30 minutes from the starting time.
 							$_SESSION['expire'] = $_SESSION['start'] + (10 * 60);
