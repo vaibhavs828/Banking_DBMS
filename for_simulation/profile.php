@@ -161,7 +161,7 @@
      <div class="col-sm-6"><h3>Address</h3></div>  
      <div class="col-sm-6"><?php echo $string6 ?></div></div>
      <div class="row">
-     <div class="col-sm-6"><button class="btn btn-primary">Modify Account</button></div>  
+     <div class="col-sm-6"><a href="deleteAccount.php"><button class="btn btn-primary">Delete Account</button></a></div>  
      </div>             
       
 
