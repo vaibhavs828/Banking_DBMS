@@ -1,4 +1,4 @@
-name: PHP syntax check 
+name: Build
 
 on:
   push:
@@ -29,5 +29,5 @@ jobs:
       if: steps.composer-cache.outputs.cache-hit != 'true'
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Run lint
+    - name: Run tests
       run: composer lint
