@@ -1,6 +1,6 @@
 <?php
 	
-	echo "syntax error file";
+	echo "for testing"::
 
 
 ?>
