@@ -1,0 +1,141 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: 'Mulish', sans-serif;
+    background: url(blue.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.login_container{
+    padding-top: 15px!important;
+}
+.input-group{
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 768px){
+    .input-group{
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .apology{
+        padding-top: 10px !important;
+        font-size: 20px !important;
+    }
+}
+
+#button{
+    width: 150px;
+}
+
+.navdel{
+    margin: 5px 0px 80px 10px;
+    letter-spacing: 3px;
+}
+.navbar-brand{
+    color: #3a50559e !important;
+    font-weight: bolder;
+}
+
+/*#carousel{
+    width: 50px !important;
+    height: 50px !important;
+}*/
+
+#navimg{
+    padding: 5px 0px 10px 15px;
+}
+
+/*#sad{
+    margin: 30px 10px 10px 20px;
+    width: 50px !important;
+    height: 50px !important;
+}*/
+
+.user_card {
+    height: 400px;
+    width: 400px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #4d78828c;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+.form{
+    display: grid;
+    justify-content: center;
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #e8f9ff;
+    padding: 10px;
+    text-align: center;
+}
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+p{
+    margin-top: -50px;
+}
+.apology{
+    font-size: 25px;
+    font-weight: bolder;
+}
+.form_container {
+    margin-top: 100px;
+}
+.login_btn {
+    width: 100%;
+    background: #000000 !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #c0392b !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #c0392b !important;
+}
+#companyMail{
+    font-weight: bold;
+}
+.bg-primary{
+    background-color: transparent !important;
+}

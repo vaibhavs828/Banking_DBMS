@@ -1,79 +1,25 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-family: 'Mulish', sans-serif;
+	/*background: #d1e8e2;*/
+	background: url(blue.jpg) no-repeat fixed center;
+	background-size: cover;
+
+}
+
+
+
+
+
+/*
+body{
+	margin: 0;
+	padding: 0;
 	font-family: sans-serif;
-	background: #d1e8e2;
+	background: #d1e8e2; /*#d1e8e2*/
 	/*background: url(bk9.jpg) no-repeat;
 	background-size: cover;*/
-}
-
-#nm{
-    letter-spacing: 3px;
-}
-
-.name{
-	color: #000000;
-	top: 30%;
-	left: 30%;
-	margin: 20px;
-}
-
-.box{
-	 width: 600px;
-        margin: 5em auto;
-        padding: 2em;
-        background-color: #fdfdff;
-        border-radius: 0.5em;
-        box-shadow: 5px 10px 10px #005b74;
-}
-
-.box h1{
-	color: #ffffff;
-	font-weight: 400;
-}
-
-.box input[type = "text"], .box input[type = "password"]{
-	border: 0;
-	background: none;
-	display: block;
-	margin: 6% auto;
-	text-align: center;
-	border: 1px solid #add8e6;
-	padding: 14px 10px;
-	width: 65%;
-	outline: none;
-	color: #000000;
-	border-radius: 4px;
-}
-
-.box input[type = "submit"]{
-	border: 0;
-	background: none;
-	display: block;
-	margin: 6% auto;
-	text-align: center;
-	border: 2px solid #add8e6; /*#00e4e8*/
-	padding: 5% 12%;
-	outline: none;
-	color: #ffffff;
-	border-radius: 25%;
-	cursor: pointer;
-}
-
-.box input[type = "submit"]:hover{
-	background: #add8e62e;
-}
-
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #d1e8e2; /*#00e4e8*/
-  opacity: 1; /* Firefox */
-}
-
-.links a {
-	justify-self: center;
-	color: #213466f2;
-	font-family: sans-serif;
-}
 
 
 #nm{
@@ -88,14 +34,17 @@ body{
 }
 
 .box{
-	width: 35%;
-	padding: 5%;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-	background: #ffffff; /*black*/ /*#005b74ba*/
+	width: 470px;
 	text-align: center;
+    margin: 5em auto;
+    padding: 5em;
+    background-color: #fdfdff;
+    border-radius: 0.5em;
+    box-shadow: 5px 10px 10px #005b74;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -225px 0 0 -225px;
 }
 
 .box h1{

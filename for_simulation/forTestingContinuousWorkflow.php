@@ -1,0 +1,6 @@
+<?php
+	
+	echo "for testing"::
+
+
+?>
